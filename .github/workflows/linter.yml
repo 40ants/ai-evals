@@ -15,35 +15,43 @@
   },
   "jobs": {
     "linter": {
-      "permissions": {
-        "contents": "read"
-      },
-      "runs-on": "macos-15",
+      "runs-on": "ubuntu-latest",
       "env": {
-        "OS": "macos-15"
+        "OS": "ubuntu-latest",
+        "QUICKLISP_DIST": "quicklisp",
+        "LISP": "sbcl-bin"
       },
       "steps": [
         {
-          "name": "Checkout",
-          "uses": "actions/checkout@v5"
+          "name": "Checkout Code",
+          "uses": "actions/checkout@v4"
         },
         {
-          "name": "Install Nix",
-          "uses": "cachix/install-nix-action@v31"
+          "name": "Setup Common Lisp Environment",
+          "uses": "40ants/setup-lisp@v4",
+          "with": {
+            "asdf-system": "40ants-ai-evals",
+            "cache": "true"
+          }
         },
         {
-          "name": "Install Lisp dependencies",
-          "run": "nix-shell --run 'qlot install'",
+          "name": "Change dist to Ultralisp if qlfile does not exist",
+          "run": "if [[ ! -e qlfile ]]; then echo 'dist ultralisp http://dist.ultralisp.org' > qlfile; fi",
           "shell": "bash"
         },
         {
-          "name": "Prepare job dependencies",
-          "run": "nix-shell --run 'qlot exec ros -s 40ants-linter/main -q'",
+          "name": "Update Qlot",
+          "run": "qlot update --no-deps",
           "shell": "bash"
         },
         {
-          "name": "linter",
-          "run": "nix-shell --run 'qlot exec 40ants-linter --system 40ants-ai-evals,40ants-ai-evals-common-checks,40ants-ai-evals-docs,40ants-ai-evals-tests,40ants-ai-evals-ci'",
+          "name": "Install SBLint wrapper",
+          "run": "qlot exec ros install 40ants-asdf-system 40ants-linter",
+          "shell": "bash"
+        },
+        {
+          "name": "Run Linter",
+          "run": "qlot exec 40ants-linter --system \"40ants-ai-evals, 40ants-ai-evals-common-checks, 40ants-ai-evals-docs, 40ants-ai-evals-tests, 40ants-ai-evals-ci\"",
           "shell": "bash"
         }
       ]

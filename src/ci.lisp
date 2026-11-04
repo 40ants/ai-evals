@@ -2,6 +2,8 @@
   (:use #:cl)
   (:import-from #:serapeum #:->)
   (:import-from #:40ants-ci/jobs/job #:job)
+  (:import-from #:40ants-ci/jobs/linter)
+  (:import-from #:40ants-ci/jobs/docs #:build-docs)
   (:import-from #:40ants-ci/steps/action #:action)
   (:import-from #:40ants-ci/steps/sh #:sh)
   (:import-from #:40ants-ci/workflow #:defworkflow))
@@ -35,12 +37,17 @@
   :on-push-to "master"
   :by-cron "0 10 * * 1"
   :on-pull-request t
-  :jobs ((nix-job "docs" "qlot exec ros roswell/build-docs.ros")))
+  :cache t
+  :jobs ((build-docs :asdf-system "40ants-ai-evals-docs")))
 
 (defworkflow linter
   :on-push-to "master"
   :by-cron "0 10 * * 1"
   :on-pull-request t
-  :jobs ((nix-job "linter"
-                 "qlot exec 40ants-linter --system 40ants-ai-evals,40ants-ai-evals-common-checks,40ants-ai-evals-docs,40ants-ai-evals-tests,40ants-ai-evals-ci"
-                 "qlot exec ros -s 40ants-linter/main -q")))
+  :cache t
+  :jobs ((40ants-ci/jobs/linter:linter
+          :asdf-systems ("40ants-ai-evals"
+                         "40ants-ai-evals-common-checks"
+                         "40ants-ai-evals-docs"
+                         "40ants-ai-evals-tests"
+                         "40ants-ai-evals-ci"))))

@@ -459,11 +459,13 @@ qlot exec ros -s 40ants-ai-evals-ci -q
 
 Loading this system writes .github/workflows/ci.yml, docs.yml and linter.yml.
 Edit the Lisp definitions and regenerate these files together. The workflows run
-on pushes to master, pull requests and the weekly Monday schedule. They execute
-offline tests, strict documentation builds and lint checks through the pinned Nix
-environment on a macos-15 Apple Silicon runner. Only SBCL is supported here.
-The jobs use read-only repository permissions and make no model calls.
-The production system does not load the CI system or depend on 40ants-ci.")
+on pushes to master, pull requests and the weekly Monday schedule. Offline tests
+use the pinned Nix environment on a macos-15 Apple Silicon runner with read-only
+repository permissions. Documentation and linting use the standard build-docs and
+linter jobs from 40ants-ci with dependency caching and the repository's existing
+permission policy. Strict documentation warning checks remain enabled. The workflows
+make no model calls. The production system does not load the CI system or depend
+on 40ants-ci.")
 
 (defsection-copy @readme @index)
 (defautodoc @api (:system "40ants-ai-evals"))
