@@ -87,7 +87,7 @@ and extension contracts. The extraction decision is recorded in
 
 <a id="x-28-23A-28-2822-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FAGENTS-22-29-20PACKAGE-29"></a>
 
-#### [package](915b) `40ants-ai-evals/agents`
+#### [package](16bc) `40ants-ai-evals/agents`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FAGENTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -95,25 +95,25 @@ and extension contracts. The extraction decision is recorded in
 
 <a id="x-2840ANTS-AI-EVALS-2FAGENTS-3APROFILE-FOR-20FUNCTION-29"></a>
 
-##### [function](5e04) `40ants-ai-evals/agents:profile-for` agent flags &optional tools
+##### [function](569a) `40ants-ai-evals/agents:profile-for` agent flags &optional tools
 
 Copy `AGENT`'s profile, recording only tools relevant to that agent.
 
 <a id="x-2840ANTS-AI-EVALS-2FAGENTS-3APROVIDER-IDENTITY-20FUNCTION-29"></a>
 
-##### [function](2cbe) `40ants-ai-evals/agents:provider-identity` label
+##### [function](5e99) `40ants-ai-evals/agents:provider-identity` label
 
 Decode current labels and historical Codex-only labels into agent and variant.
 
 <a id="x-2840ANTS-AI-EVALS-2FAGENTS-3APROVIDER-LABEL-20FUNCTION-29"></a>
 
-##### [function](9db2) `40ants-ai-evals/agents:provider-label` agent variant
+##### [function](9b55) `40ants-ai-evals/agents:provider-label` agent variant
 
 Return an unambiguous provider label for one agent/skill combination.
 
 <a id="x-2840ANTS-AI-EVALS-2FAGENTS-3ARENDER-TASK-20FUNCTION-29"></a>
 
-##### [function](514a) `40ants-ai-evals/agents:render-task` TASK AGENT &OPTIONAL (SKILL-NAME "writing-common-lisp")
+##### [function](3288) `40ants-ai-evals/agents:render-task` TASK AGENT &OPTIONAL (SKILL-NAME "writing-common-lisp")
 
 Render explicit references so new suites have observable skill-read evidence.
 Codex expands dollar references before `SDK` tool traces, which cannot prove a read.
@@ -121,7 +121,7 @@ Automatic routing tasks remain untouched, as does the original suite contract.
 
 <a id="x-2840ANTS-AI-EVALS-2FAGENTS-3ASELECTED-AGENTS-20FUNCTION-29"></a>
 
-##### [function](6ecb) `40ants-ai-evals/agents:selected-agents` flags
+##### [function](b874) `40ants-ai-evals/agents:selected-agents` flags
 
 Resolve `--agent`; preserve Codex as the default for existing commands.
 
@@ -131,7 +131,7 @@ Resolve `--agent`; preserve Codex as the default for existing commands.
 
 <a id="x-2840ANTS-AI-EVALS-2FAGENTS-3A-2APROFILES-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](7d3f) `40ants-ai-evals/agents:*profiles*` #<hash-table :test equal :count 2 {800af43b53}>
+##### [variable](3211) `40ants-ai-evals/agents:*profiles*` #<hash-table :test equal :count 2 {800aee5743}>
 
 Default agent profiles. [`profile-for`][62b3] returns a copy; callers may override one run's model.
 `EFFORT` is a Codex setting and is never translated into an OpenCode reasoning option.
@@ -142,7 +142,7 @@ Default agent profiles. [`profile-for`][62b3] returns a copy; callers may overri
 
 <a id="x-28-23A-28-2830-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FCASE-RESOURCES-22-29-20PACKAGE-29"></a>
 
-#### [package](b5b4) `40ants-ai-evals/case-resources`
+#### [package](70d7) `40ants-ai-evals/case-resources`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -150,79 +150,79 @@ Default agent profiles. [`profile-for`][62b3] returns a copy; callers may overri
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3ABASELINE-MANIFEST-20FUNCTION-29"></a>
 
-##### [function](da90) `40ants-ai-evals/case-resources:baseline-manifest` VARS &OPTIONAL (SPEC (FIELD VARS "fixtures"))
+##### [function](d6a0) `40ants-ai-evals/case-resources:baseline-manifest` VARS &OPTIONAL (SPEC (FIELD VARS "fixtures"))
 
 Use the frozen baseline including supervisor-added files, or normalize old vars.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3ACOPY-FIXTURES-20FUNCTION-29"></a>
 
-##### [function](0e02) `40ants-ai-evals/case-resources:copy-fixtures` vars workspace
+##### [function](d69e) `40ants-ai-evals/case-resources:copy-fixtures` vars workspace
 
 Copy inputs from the selected input tree without decoding or following links.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AFILE-METADATA-20FUNCTION-29"></a>
 
-##### [function](b301) `40ants-ai-evals/case-resources:file-metadata` path
+##### [function](5b99) `40ants-ai-evals/case-resources:file-metadata` path
 
 Describe regular-file bytes and executable bits without following symlinks.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AFILE-REFERENCES-20FUNCTION-29"></a>
 
-##### [function](fa86) `40ants-ai-evals/case-resources:file-references` vars
+##### [function](c606) `40ants-ai-evals/case-resources:file-references` vars
 
 Read a resource set or a historical array without expanding Promptfoo cases.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AFIXTURE-MANIFEST-20FUNCTION-29"></a>
 
-##### [function](fd23) `40ants-ai-evals/case-resources:fixture-manifest` VARS &OPTIONAL (SPEC (FIELD VARS "fixtures"))
+##### [function](ca32) `40ants-ai-evals/case-resources:fixture-manifest` VARS &OPTIONAL (SPEC (FIELD VARS "fixtures"))
 
 Read a fixture directory, or normalize a historical inline fixture object.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AINPUT-FINGERPRINT-20FUNCTION-29"></a>
 
-##### [function](a458) `40ants-ai-evals/case-resources:input-fingerprint` cases &key fixtures-only
+##### [function](4a86) `40ants-ai-evals/case-resources:input-fingerprint` cases &key fixtures-only
 
 Hash actual case resource bytes and modes from the selected input tree.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AMANIFEST-EQUAL-P-20FUNCTION-29"></a>
 
-##### [function](5e3a) `40ants-ai-evals/case-resources:manifest-equal-p` expected actual
+##### [function](724c) `40ants-ai-evals/case-resources:manifest-equal-p` expected actual
 
 Compare complete file sets, bytes and captured executable permissions.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AMETADATA-EQUAL-P-20FUNCTION-29"></a>
 
-##### [function](e8cd) `40ants-ai-evals/case-resources:metadata-equal-p` expected actual
+##### [function](b96e) `40ants-ai-evals/case-resources:metadata-equal-p` expected actual
 
 Compare byte identity and permissions when that evidence is available.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3APRODUCT-PATH-P-20FUNCTION-29"></a>
 
-##### [function](933c) `40ants-ai-evals/case-resources:product-path-p` path
+##### [function](ffca) `40ants-ai-evals/case-resources:product-path-p` path
 
 Exclude evaluation machinery from product file comparisons.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3ARESOLVE-RESOURCE-20FUNCTION-29"></a>
 
-##### [function](b674) `40ants-ai-evals/case-resources:resolve-resource` vars reference &key directory
+##### [function](96ec) `40ants-ai-evals/case-resources:resolve-resource` vars reference &key directory
 
 Resolve a suite-relative input, rejecting symlinks in every path component.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3ARESTORE-SAMPLE-20FUNCTION-29"></a>
 
-##### [function](87b5) `40ants-ai-evals/case-resources:restore-sample` sample destination
+##### [function](c0c2) `40ants-ai-evals/case-resources:restore-sample` sample destination
 
 Restore regular candidate files from verified archives, including binary inputs.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3ASAMPLE-MANIFEST-20FUNCTION-29"></a>
 
-##### [function](9057) `40ants-ai-evals/case-resources:sample-manifest` sample
+##### [function](458b) `40ants-ai-evals/case-resources:sample-manifest` sample
 
 Describe product evidence, retaining compatibility with text-only archives.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3AVALIDATE-FIXTURES-20FUNCTION-29"></a>
 
-##### [function](0e52) `40ants-ai-evals/case-resources:validate-fixtures` vars
+##### [function](e3dd) `40ants-ai-evals/case-resources:validate-fixtures` vars
 
 Validate fixture inputs before any paid evaluation starts.
 
@@ -232,13 +232,13 @@ Validate fixture inputs before any paid evaluation starts.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3A-2AINPUTS-ROOT-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](9b6f) `40ants-ai-evals/case-resources:*inputs-root*` nil
+##### [variable](b374) `40ants-ai-evals/case-resources:*inputs-root*` nil
 
 Input tree for this operation; `NIL` uses the loaded harness.
 
 <a id="x-2840ANTS-AI-EVALS-2FCASE-RESOURCES-3A-2ASAMPLE-DIRECTORY-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](4fca) `40ants-ai-evals/case-resources:*sample-directory*` nil
+##### [variable](7e21) `40ants-ai-evals/case-resources:*sample-directory*` nil
 
 Trusted archive directory of the sample being graded.
 
@@ -248,7 +248,7 @@ Trusted archive directory of the sample being graded.
 
 <a id="x-28-23A-28-2822-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FCHECKS-22-29-20PACKAGE-29"></a>
 
-#### [package](0671) `40ants-ai-evals/checks`
+#### [package](c8be) `40ants-ai-evals/checks`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCHECKS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -256,55 +256,55 @@ Trusted archive directory of the sample being graded.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3ACACHED-20FUNCTION-29"></a>
 
-##### [function](595d) `40ants-ai-evals/checks:cached` context key compute
+##### [function](940f) `40ants-ai-evals/checks:cached` context key compute
 
 Compute shared evidence once per sample, including a cached `NIL` result.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3ACONTEXT-SAMPLE-20FUNCTION-29"></a>
 
-##### [function](f5d5) `40ants-ai-evals/checks:context-sample` context
+##### [function](b563) `40ants-ai-evals/checks:context-sample` context
 
 Return immutable-by-convention sample evidence for a check.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3ACONTEXT-VARS-20FUNCTION-29"></a>
 
-##### [function](b11b) `40ants-ai-evals/checks:context-vars` context
+##### [function](251f) `40ants-ai-evals/checks:context-vars` context
 
 Return the test variables for a check.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3ADESCRIBE-CHECKS-20FUNCTION-29"></a>
 
-##### [function](cdb9) `40ants-ai-evals/checks:describe-checks`
+##### [function](48c0) `40ants-ai-evals/checks:describe-checks`
 
 Return `JSON`-compatible schemas for the checks currently registered.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AEXECUTE-PLAN-20FUNCTION-29"></a>
 
-##### [function](4e82) `40ants-ai-evals/checks:execute-plan` context plan
+##### [function](bc06) `40ants-ai-evals/checks:execute-plan` context plan
 
 Execute independent handlers; `NIL` skips a check, a vector emits several results.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3ALOAD-CHECK-SYSTEMS-20FUNCTION-29"></a>
 
-##### [function](9046) `40ants-ai-evals/checks:load-check-systems` systems
+##### [function](1340) `40ants-ai-evals/checks:load-check-systems` systems
 
 Load trusted `ASDF` extensions from explicit project paths or Qlot dependencies.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AMAKE-CONTEXT-20FUNCTION-29"></a>
 
-##### [function](38c5) `40ants-ai-evals/checks:make-context` sample vars
+##### [function](a1bb) `40ants-ai-evals/checks:make-context` sample vars
 
 Create a per-sample extension context with an isolated evidence cache.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AMERGE-VARS-20FUNCTION-29"></a>
 
-##### [function](a2f5) `40ants-ai-evals/checks:merge-vars` defaults overrides
+##### [function](4d91) `40ants-ai-evals/checks:merge-vars` defaults overrides
 
 Copy defaults then apply explicit object fields without mutating inputs.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AOUTCOME-20FUNCTION-29"></a>
 
-##### [function](4028) `40ants-ai-evals/checks:outcome` NAME PASS &KEY REASON (SCORE (IF PASS
+##### [function](7301) `40ants-ai-evals/checks:outcome` NAME PASS &KEY REASON (SCORE (IF PASS
     1.0d0
     0.0d0))
 
@@ -313,19 +313,19 @@ A passing result may award partial credit; its reason remains available.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AREGISTER-CHECK-20FUNCTION-29"></a>
 
-##### [function](b0b4) `40ants-ai-evals/checks:register-check` id handler &key (parameters (dict)) (defaults (dict)) validate optional-parameters
+##### [function](03b9) `40ants-ai-evals/checks:register-check` id handler &key (parameters (dict)) (defaults (dict)) validate optional-parameters
 
 Register `HANDLER`(context, parameters), typed parameters, defaults and optional fields.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AREGISTER-PROFILE-20FUNCTION-29"></a>
 
-##### [function](5579) `40ants-ai-evals/checks:register-profile` id specifications
+##### [function](9375) `40ants-ai-evals/checks:register-profile` id specifications
 
 Register a reusable ordered plan, owned by the registering package.
 
 <a id="x-2840ANTS-AI-EVALS-2FCHECKS-3AVALIDATE-PLAN-20FUNCTION-29"></a>
 
-##### [function](8620) `40ants-ai-evals/checks:validate-plan` vars
+##### [function](6747) `40ants-ai-evals/checks:validate-plan` vars
 
 Load extensions and resolve a typed plan before spending model calls.
 
@@ -335,7 +335,7 @@ Load extensions and resolve a typed plan before spending model calls.
 
 <a id="x-28-23A-28-2819-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FCLI-22-29-20PACKAGE-29"></a>
 
-#### [package](c2eb) `40ants-ai-evals/cli`
+#### [package](6f19) `40ants-ai-evals/cli`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCLI-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -343,7 +343,7 @@ Load extensions and resolve a typed plan before spending model calls.
 
 <a id="x-2840ANTS-AI-EVALS-2FCLI-3AMAIN-20FUNCTION-29"></a>
 
-##### [function](00bf) `40ants-ai-evals/cli:main` arguments
+##### [function](4fc4) `40ants-ai-evals/cli:main` arguments
 
 Run the `CLI`, keeping machine-readable stdout clean for protocol commands.
 
@@ -353,7 +353,7 @@ Run the `CLI`, keeping machine-readable stdout clean for protocol commands.
 
 <a id="x-28-23A-28-2825-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FCOLLECTOR-22-29-20PACKAGE-29"></a>
 
-#### [package](b568) `40ants-ai-evals/collector`
+#### [package](2816) `40ants-ai-evals/collector`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCOLLECTOR-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -361,7 +361,7 @@ Run the `CLI`, keeping machine-readable stdout clean for protocol commands.
 
 <a id="x-2840ANTS-AI-EVALS-2FCOLLECTOR-3ACOLLECT-AND-GRADE-20FUNCTION-29"></a>
 
-##### [function](ddf2) `40ants-ai-evals/collector:collect-and-grade` request
+##### [function](09bd) `40ants-ai-evals/collector:collect-and-grade` request
 
 Archive provider evidence before grading, preserving agent identity and raw traces.
 
@@ -371,7 +371,7 @@ Archive provider evidence before grading, preserving agent identity and raw trac
 
 <a id="x-28-23A-28-2828-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FENVIRONMENTS-22-29-20PACKAGE-29"></a>
 
-#### [package](0fa5) `40ants-ai-evals/environments`
+#### [package](a433) `40ants-ai-evals/environments`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FENVIRONMENTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -379,55 +379,55 @@ Archive provider evidence before grading, preserving agent identity and raw trac
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3ACODEX-CONFIG-20FUNCTION-29"></a>
 
-##### [function](0298) `40ants-ai-evals/environments:codex-config` descriptor
+##### [function](2583) `40ants-ai-evals/environments:codex-config` descriptor
 
 Return project-specific native Codex configuration.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3AENVIRONMENT-VARIABLES-20FUNCTION-29"></a>
 
-##### [function](bbef) `40ants-ai-evals/environments:environment-variables` descriptor &optional workspace
+##### [function](c322) `40ants-ai-evals/environments:environment-variables` descriptor &optional workspace
 
 Return environment variables for the fixture process.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3AFINALIZE-20FUNCTION-29"></a>
 
-##### [function](e0ae) `40ants-ai-evals/environments:finalize` workspace &key vars archive-directory
+##### [function](c7c6) `40ants-ai-evals/environments:finalize` workspace &key vars archive-directory
 
 Collect project-owned fixture evidence after success, error or timeout.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3AOPENCODE-CONFIG-20FUNCTION-29"></a>
 
-##### [function](7cb5) `40ants-ai-evals/environments:opencode-config` descriptor
+##### [function](83b7) `40ants-ai-evals/environments:opencode-config` descriptor
 
 Return project-specific native OpenCode configuration.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3APREFLIGHT-20FUNCTION-29"></a>
 
-##### [function](82ba) `40ants-ai-evals/environments:preflight` profile &key (check-tools t)
+##### [function](d401) `40ants-ai-evals/environments:preflight` profile &key (check-tools t)
 
 Validate project-provided prerequisites before any model call.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3APREPARE-20FUNCTION-29"></a>
 
-##### [function](470a) `40ants-ai-evals/environments:prepare` workspace vars
+##### [function](b6b2) `40ants-ai-evals/environments:prepare` workspace vars
 
 Prepare one isolated workspace through the registered project callback.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3APROFILE-NAME-20FUNCTION-29"></a>
 
-##### [function](fe05) `40ants-ai-evals/environments:profile-name` profile
+##### [function](9999) `40ants-ai-evals/environments:profile-name` profile
 
 Normalize a declared environment identifier.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3AREGISTER-ENVIRONMENT-20FUNCTION-29"></a>
 
-##### [function](14c2) `40ants-ai-evals/environments:register-environment` name &rest callbacks
+##### [function](7cc2) `40ants-ai-evals/environments:register-environment` name &rest callbacks
 
 Register a trusted project's [`prepare`][7749], [`preflight`][2a5c] and evidence callbacks.
 
 <a id="x-2840ANTS-AI-EVALS-2FENVIRONMENTS-3AWORKSPACE-INSTRUCTIONS-20FUNCTION-29"></a>
 
-##### [function](33fc) `40ants-ai-evals/environments:workspace-instructions` &optional profile
+##### [function](4257) `40ants-ai-evals/environments:workspace-instructions` &optional profile
 
 Describe the prepared runtime without exposing assertion requirements.
 
@@ -437,7 +437,7 @@ Describe the prepared runtime without exposing assertion requirements.
 
 <a id="x-28-23A-28-2833-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-22-29-20PACKAGE-29"></a>
 
-#### [package](5d8d) `40ants-ai-evals/grading/contracts`
+#### [package](d7f6) `40ants-ai-evals/grading/contracts`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -445,7 +445,7 @@ Describe the prepared runtime without exposing assertion requirements.
 
 <a id="x-2840ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-3AGRADE-20FUNCTION-29"></a>
 
-##### [function](a513) `40ants-ai-evals/grading/contracts:grade` output vars &key sample-directory
+##### [function](6b90) `40ants-ai-evals/grading/contracts:grade` output vars &key sample-directory
 
 Run the case's registered checks; infrastructure errors propagate to the collector.
 
@@ -455,7 +455,7 @@ Run the case's registered checks; infrastructure errors propagate to the collect
 
 <a id="x-28-23A-28-2823-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FHISTORY-22-29-20PACKAGE-29"></a>
 
-#### [package](61a8) `40ants-ai-evals/history`
+#### [package](8399) `40ants-ai-evals/history`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FHISTORY-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -463,7 +463,7 @@ Run the case's registered checks; infrastructure errors propagate to the collect
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3ACOMPARE-RUNS-20FUNCTION-29"></a>
 
-##### [function](44c2) `40ants-ai-evals/history:compare-runs` before after &key allow-mismatch agent before-agent after-agent suite
+##### [function](f7eb) `40ants-ai-evals/history:compare-runs` before after &key allow-mismatch agent before-agent after-agent suite
 
 Compare runs for `AGENT`, or select each side with `BEFORE-AGENT` and `AFTER-AGENT`.
 Different agent selectors produce an agent/model comparison, not a skill regression.
@@ -472,7 +472,7 @@ Different suite identities are always rejected; `SUITE` restricts both selected 
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3AFIND-RUN-20FUNCTION-29"></a>
 
-##### [function](33b7) `40ants-ai-evals/history:find-run` id &rest options
+##### [function](b01d) `40ants-ai-evals/history:find-run` id &rest options
 
 Resolve `ID`s, labels and relative selectors, optionally restricted with `:SUITE`.
 An optional positional history list preserves the original reader `API`. Exact `ID`s
@@ -480,31 +480,31 @@ remain selectable across suites so comparison can report a clear identity error.
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3AHISTORIES-20FUNCTION-29"></a>
 
-##### [function](8365) `40ants-ai-evals/history:histories` &OPTIONAL (RUNS-ROOT (AT (ROOT) ".evals/runs/"))
+##### [function](9f6e) `40ants-ai-evals/history:histories` &OPTIONAL (RUNS-ROOT (AT (ROOT) ".evals/runs/"))
 
 Read accumulated summaries in run `ID` order, including pre-migration runs.
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3AMAKE-SUMMARY-20FUNCTION-29"></a>
 
-##### [function](e65e) `40ants-ai-evals/history:make-summary` manifest exported status &optional (signal :null)
+##### [function](263b) `40ants-ai-evals/history:make-summary` manifest exported status &optional (signal :null)
 
 Build a summary from either supported Promptfoo export shape.
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3APRINT-HISTORY-20FUNCTION-29"></a>
 
-##### [function](6279) `40ants-ai-evals/history:print-history` &key agent suite
+##### [function](f5fc) `40ants-ai-evals/history:print-history` &key agent suite
 
 List accumulated runs, optionally selecting `SUITE` and counting `AGENT` only.
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3APRINT-SUMMARY-20FUNCTION-29"></a>
 
-##### [function](7776) `40ants-ai-evals/history:print-summary` summary
+##### [function](281a) `40ants-ai-evals/history:print-summary` summary
 
 Print scores and failures with artifact location.
 
 <a id="x-2840ANTS-AI-EVALS-2FHISTORY-3ASUMMARIZE-20FUNCTION-29"></a>
 
-##### [function](29c2) `40ants-ai-evals/history:summarize` run-dir manifest status
+##### [function](c5bf) `40ants-ai-evals/history:summarize` run-dir manifest status
 
 Write a summary beside the original export; leave the database untouched.
 
@@ -514,7 +514,7 @@ Write a summary beside the original export; leave the database untouched.
 
 <a id="x-28-23A-28-2823-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FPROJECT-22-29-20PACKAGE-29"></a>
 
-#### [package](55b2) `40ants-ai-evals/project`
+#### [package](a751) `40ants-ai-evals/project`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROJECT-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -522,7 +522,7 @@ Write a summary beside the original export; leave the database untouched.
 
 <a id="x-2840ANTS-AI-EVALS-2FPROJECT-3ALOAD-EXTENSIONS-20FUNCTION-29"></a>
 
-##### [function](7010) `40ants-ai-evals/project:load-extensions`
+##### [function](8f73) `40ants-ai-evals/project:load-extensions`
 
 Load explicit project-owned `ASDF` systems before resolving environments or cases.
 
@@ -532,7 +532,7 @@ Load explicit project-owned `ASDF` systems before resolving environments or case
 
 <a id="x-28-23A-28-2834-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-22-29-20PACKAGE-29"></a>
 
-#### [package](99d8) `40ants-ai-evals/providers/opencode`
+#### [package](ac37) `40ants-ai-evals/providers/opencode`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -540,7 +540,7 @@ Load explicit project-owned `ASDF` systems before resolving environments or case
 
 <a id="x-2840ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3ACALL-AGENT-20FUNCTION-29"></a>
 
-##### [function](9ea2) `40ants-ai-evals/providers/opencode:call-agent` request
+##### [function](8777) `40ants-ai-evals/providers/opencode:call-agent` request
 
 Run one prompt in a fresh workspace/session; retain full and partial raw evidence.
 `CONFIG` requires runDir, server and working_dir (or `VARS`.workspaces.opencode.`VARIANT`).
@@ -548,27 +548,27 @@ Timeouts interrupt execution before collecting the projected export and durable 
 
 <a id="x-2840ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3AMODEL-REFERENCE-20FUNCTION-29"></a>
 
-##### [function](0dab) `40ants-ai-evals/providers/opencode:model-reference` model
+##### [function](5681) `40ants-ai-evals/providers/opencode:model-reference` model
 
 Parse the v2 provider/model`#variant` reference without changing its model name.
 
 <a id="x-2840ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3ANORMALIZE-TRANSCRIPT-20FUNCTION-29"></a>
 
-##### [function](cb81) `40ants-ai-evals/providers/opencode:normalize-transcript` TRANSCRIPT &OPTIONAL (SKILL-NAME "writing-common-lisp")
+##### [function](bef6) `40ants-ai-evals/providers/opencode:normalize-transcript` TRANSCRIPT &OPTIONAL (SKILL-NAME "writing-common-lisp")
 
 Normalize complete v2 export data, deduplicating message and tool identifiers.
 Token counts include compaction calls; only completed target skill reads count.
 
 <a id="x-2840ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3ASTART-SERVER-20FUNCTION-29"></a>
 
-##### [function](8219) `40ants-ai-evals/providers/opencode:start-server` RUN-DIR &KEY (EXECUTABLE (OR (UIOP/OS:GETENV "SKILL\_EVAL\_OPENCODE\_BIN") "opencode"))
+##### [function](4db0) `40ants-ai-evals/providers/opencode:start-server` RUN-DIR &KEY (EXECUTABLE (OR (UIOP/OS:GETENV "SKILL\_EVAL\_OPENCODE\_BIN") "opencode"))
 
 Start a private loopback OpenCode v2 server and import only the `ZAI` `API` key.
 The serializable descriptor references private temporary state; [`stop-server`][7ed9] erases it.
 
 <a id="x-2840ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3ASTOP-SERVER-20FUNCTION-29"></a>
 
-##### [function](5689) `40ants-ai-evals/providers/opencode:stop-server` server
+##### [function](5c3f) `40ants-ai-evals/providers/opencode:stop-server` server
 
 Stop the owned server and remove its private configuration, database and credentials.
 
@@ -578,7 +578,7 @@ Stop the owned server and remove its private configuration, database and credent
 
 <a id="x-2840ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3A-2AHTTP-REQUEST-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](cd15) `40ants-ai-evals/providers/opencode:*http-request*` nil
+##### [variable](8021) `40ants-ai-evals/providers/opencode:*http-request*` nil
 
 Optional `HTTP` test hook receiving descriptor, method, path, body, timeout and raw-p.
 The hook must return an already decoded `JSON` value, or text when `RAW-P` is true.
@@ -589,7 +589,7 @@ The hook must return an already decoded `JSON` value, or text when `RAW-P` is tr
 
 <a id="x-28-23A-28-2824-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FRECOVERY-22-29-20PACKAGE-29"></a>
 
-#### [package](d4b3) `40ants-ai-evals/recovery`
+#### [package](6526) `40ants-ai-evals/recovery`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FRECOVERY-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -597,7 +597,7 @@ The hook must return an already decoded `JSON` value, or text when `RAW-P` is tr
 
 <a id="x-2840ANTS-AI-EVALS-2FRECOVERY-3ACAPTURE-20FUNCTION-29"></a>
 
-##### [function](65b3) `40ants-ai-evals/recovery:capture` workspace provider-dir vars normalized trace-path failure
+##### [function](e559) `40ants-ai-evals/recovery:capture` workspace provider-dir vars normalized trace-path failure
 
 Archive one native provider workspace independently of Promptfoo's deadline.
 `VARS` must contain its exact `ID` and variant. Credentials and server state are never
@@ -605,7 +605,7 @@ copied: only the sample workspace and an already saved confined provider trace.
 
 <a id="x-2840ANTS-AI-EVALS-2FRECOVERY-3ARECOVER-20FUNCTION-29"></a>
 
-##### [function](4cec) `40ants-ai-evals/recovery:recover` run-dir
+##### [function](28ab) `40ants-ai-evals/recovery:recover` run-dir
 
 Enrich local failed export rows from exact, unambiguous provider snapshots.
 Original scores, success flags and Promptfoo's database are never modified.
@@ -616,7 +616,7 @@ Original scores, success flags and Promptfoo's database are never modified.
 
 <a id="x-28-23A-28-2822-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FRUNNER-22-29-20PACKAGE-29"></a>
 
-#### [package](bf86) `40ants-ai-evals/runner`
+#### [package](c113) `40ants-ai-evals/runner`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FRUNNER-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -624,25 +624,25 @@ Original scores, success flags and Promptfoo's database are never modified.
 
 <a id="x-2840ANTS-AI-EVALS-2FRUNNER-3AGRADING-VARS-20FUNCTION-29"></a>
 
-##### [function](22c3) `40ants-ai-evals/runner:grading-vars` vars
+##### [function](dbe5) `40ants-ai-evals/runner:grading-vars` vars
 
 Apply this suite's declared check defaults, keeping historical expectations intact.
 
 <a id="x-2840ANTS-AI-EVALS-2FRUNNER-3AREPLAY-RUN-20FUNCTION-29"></a>
 
-##### [function](089c) `40ants-ai-evals/runner:replay-run` run-dir
+##### [function](fd9d) `40ants-ai-evals/runner:replay-run` run-dir
 
 Regrade archived samples offline and save a report without changing old scores.
 
 <a id="x-2840ANTS-AI-EVALS-2FRUNNER-3ARUN-EVAL-20FUNCTION-29"></a>
 
-##### [function](e63d) `40ants-ai-evals/runner:run-eval` flags
+##### [function](e97e) `40ants-ai-evals/runner:run-eval` flags
 
 Evaluate suites separately; retain a durable index for multi-suite batches.
 
 <a id="x-2840ANTS-AI-EVALS-2FRUNNER-3AVALIDATE-OPTIONS-20FUNCTION-29"></a>
 
-##### [function](2748) `40ants-ai-evals/runner:validate-options` flags
+##### [function](af7e) `40ants-ai-evals/runner:validate-options` flags
 
 Reject invalid options before creating any run or contacting the model.
 
@@ -652,7 +652,7 @@ Reject invalid options before creating any run or contacting the model.
 
 <a id="x-28-23A-28-2822-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FSUITES-22-29-20PACKAGE-29"></a>
 
-#### [package](1344) `40ants-ai-evals/suites`
+#### [package](4033) `40ants-ai-evals/suites`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FSUITES-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -660,29 +660,29 @@ Reject invalid options before creating any run or contacting the model.
 
 <a id="x-2840ANTS-AI-EVALS-2FSUITES-3ACATALOG-20FUNCTION-29"></a>
 
-##### [function](39d0) `40ants-ai-evals/suites:catalog`
+##### [function](5d80) `40ants-ai-evals/suites:catalog`
 
 Read the project catalog, accepting old snapshots without a catalog.
 
 <a id="x-2840ANTS-AI-EVALS-2FSUITES-3ADESCRIBE-SUITES-20FUNCTION-29"></a>
 
-##### [function](dd67) `40ants-ai-evals/suites:describe-suites`
+##### [function](3175) `40ants-ai-evals/suites:describe-suites`
 
 Describe case counts without evaluating tools or contacting a model.
 
 <a id="x-2840ANTS-AI-EVALS-2FSUITES-3AFIND-SUITE-20FUNCTION-29"></a>
 
-##### [function](24ab) `40ants-ai-evals/suites:find-suite` &optional id
+##### [function](c6f0) `40ants-ai-evals/suites:find-suite` &optional id
 
 Resolve a suite, using the configured project default or the first catalog entry.
 
 <a id="x-2840ANTS-AI-EVALS-2FSUITES-3ASELECTED-SUITES-20FUNCTION-29"></a>
 
-##### [function](4b35) `40ants-ai-evals/suites:selected-suites` flags
+##### [function](408f) `40ants-ai-evals/suites:selected-suites` flags
 
 <a id="x-2840ANTS-AI-EVALS-2FSUITES-3ASUITE-PATH-20FUNCTION-29"></a>
 
-##### [function](67bf) `40ants-ai-evals/suites:suite-path` &optional id
+##### [function](a2ea) `40ants-ai-evals/suites:suite-path` &optional id
 
 Return the suite configuration's relative directory.
 
@@ -692,7 +692,7 @@ Return the suite configuration's relative directory.
 
 <a id="x-28-23A-28-2820-29-20BASE-CHAR-20-2E-20-2240ANTS-AI-EVALS-2FUTIL-22-29-20PACKAGE-29"></a>
 
-#### [package](9406) `40ants-ai-evals/util`
+#### [package](278c) `40ants-ai-evals/util`
 
 <a id="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FUTIL-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -700,157 +700,157 @@ Return the suite configuration's relative directory.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AARCHIVE-FRAMEWORK-ROOT-20FUNCTION-29"></a>
 
-##### [function](18a0) `40ants-ai-evals/util:archive-framework-root` run-dir
+##### [function](8b50) `40ants-ai-evals/util:archive-framework-root` run-dir
 
 Locate framework code in either snapshot layout.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AARCHIVE-PROJECT-ROOT-20FUNCTION-29"></a>
 
-##### [function](0b14) `40ants-ai-evals/util:archive-project-root` run-dir
+##### [function](99cb) `40ants-ai-evals/util:archive-project-root` run-dir
 
 Locate new split archives, retaining old combined snapshots unchanged.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AAT-20FUNCTION-29"></a>
 
-##### [function](57c5) `40ants-ai-evals/util:at` directory relative
+##### [function](fb95) `40ants-ai-evals/util:at` directory relative
 
 Resolve `RELATIVE` inside `DIRECTORY`.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ABOOL-20FUNCTION-29"></a>
 
-##### [function](b35c) `40ants-ai-evals/util:bool` value
+##### [function](d433) `40ants-ai-evals/util:bool` value
 
 Represent a Lisp predicate as an unambiguous `JSON` boolean.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ACOPY-DIRECTORY-20FUNCTION-29"></a>
 
-##### [function](2f41) `40ants-ai-evals/util:copy-directory` source destination &key ignore-editor-locks
+##### [function](3390) `40ants-ai-evals/util:copy-directory` source destination &key ignore-editor-locks
 
 Copy a plain tree without following symbolic links.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ADECODE-20FUNCTION-29"></a>
 
-##### [function](45cb) `40ants-ai-evals/util:decode` input
+##### [function](3e17) `40ants-ai-evals/util:decode` input
 
 Decode `JSON` with distinct arrays, booleans and null values.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ADIGEST-FILE-20FUNCTION-29"></a>
 
-##### [function](cf21) `40ants-ai-evals/util:digest-file` file
+##### [function](9f95) `40ants-ai-evals/util:digest-file` file
 
 Return a file's `SHA-256` digest.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ADIGEST-TREE-20FUNCTION-29"></a>
 
-##### [function](ee12) `40ants-ai-evals/util:digest-tree` directory
+##### [function](198f) `40ants-ai-evals/util:digest-tree` directory
 
 Hash sorted relative paths and bytes using the legacy runner's format.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AENCODE-20FUNCTION-29"></a>
 
-##### [function](cafc) `40ants-ai-evals/util:encode` value
+##### [function](683b) `40ants-ai-evals/util:encode` value
 
 Encode a `JSON` value into a `UTF-8` compatible Lisp string.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AFIELD-20FUNCTION-29"></a>
 
-##### [function](0573) `40ants-ai-evals/util:field` object &rest keys
+##### [function](a01c) `40ants-ai-evals/util:field` object &rest keys
 
 Read nested `JSON` object fields, returning `NIL` for missing keys.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AFRAMEWORK-ROOT-20FUNCTION-29"></a>
 
-##### [function](881c) `40ants-ai-evals/util:framework-root`
+##### [function](c353) `40ants-ai-evals/util:framework-root`
 
 Return the immutable library checkout, independently of the consuming project.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AJSON-EQUAL-P-20FUNCTION-29"></a>
 
-##### [function](b54e) `40ants-ai-evals/util:json-equal-p` left right
+##### [function](768d) `40ants-ai-evals/util:json-equal-p` left right
 
 Compare `JSON` values independently of object key order.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ANOW-20FUNCTION-29"></a>
 
-##### [function](f8d0) `40ants-ai-evals/util:now`
+##### [function](4a88) `40ants-ai-evals/util:now`
 
 Return an `ISO` timestamp in `UTC`.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3APROJECT-CONFIG-20FUNCTION-29"></a>
 
-##### [function](a3ee) `40ants-ai-evals/util:project-config`
+##### [function](ab7d) `40ants-ai-evals/util:project-config`
 
 Read trusted project settings; help and library-only commands need no config.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AREAD-JSON-20FUNCTION-29"></a>
 
-##### [function](3332) `40ants-ai-evals/util:read-json` file
+##### [function](9fec) `40ants-ai-evals/util:read-json` file
 
 Read `JSON` from `FILE`.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AREMOVE-DIRECTORY-20FUNCTION-29"></a>
 
-##### [function](819e) `40ants-ai-evals/util:remove-directory` directory
+##### [function](7634) `40ants-ai-evals/util:remove-directory` directory
 
 Remove a directory created or owned by the harness.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AROOT-20FUNCTION-29"></a>
 
-##### [function](f5e9) `40ants-ai-evals/util:root`
+##### [function](6214) `40ants-ai-evals/util:root`
 
 Return the consuming project, or a bound archived project during replay.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ARUN-COMMAND-20FUNCTION-29"></a>
 
-##### [function](168a) `40ants-ai-evals/util:run-command` argv &key (directory (root)) input (timeout 120) log-prefix allow-failure
+##### [function](9242) `40ants-ai-evals/util:run-command` argv &key (directory (root)) input (timeout 120) log-prefix allow-failure
 
 Run `ARGV` without a shell; capture logs and kill timed-out subprocesses.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ASAFE-RELATIVE-P-20FUNCTION-29"></a>
 
-##### [function](d86d) `40ants-ai-evals/util:safe-relative-p` relative
+##### [function](947c) `40ants-ai-evals/util:safe-relative-p` relative
 
 Recognize portable fixture paths confined to a workspace.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ASEQUENCE-LIST-20FUNCTION-29"></a>
 
-##### [function](878a) `40ants-ai-evals/util:sequence-list` value
+##### [function](a189) `40ants-ai-evals/util:sequence-list` value
 
 Convert a `JSON` array to a list; treat absent/null arrays as empty.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ATEMPORARY-DIRECTORY-20FUNCTION-29"></a>
 
-##### [function](50c9) `40ants-ai-evals/util:temporary-directory` &OPTIONAL (PREFIX "ai-evals")
+##### [function](cb36) `40ants-ai-evals/util:temporary-directory` &OPTIONAL (PREFIX "ai-evals")
 
 Allocate a private directory under the operating system's temporary root.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ATREE-FILES-20FUNCTION-29"></a>
 
-##### [function](7468) `40ants-ai-evals/util:tree-files` directory &key exclude ignore-editor-locks
+##### [function](6fe9) `40ants-ai-evals/util:tree-files` directory &key exclude ignore-editor-locks
 
 Return sorted relative files; reject symlinks before following directories.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3ATRUE-P-20FUNCTION-29"></a>
 
-##### [function](5118) `40ants-ai-evals/util:true-p` value
+##### [function](03d3) `40ants-ai-evals/util:true-p` value
 
 Recognize Lisp T or a decoded `JSON` true.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AUNIQUE-ID-20FUNCTION-29"></a>
 
-##### [function](b73a) `40ants-ai-evals/util:unique-id`
+##### [function](3578) `40ants-ai-evals/util:unique-id`
 
 Return a fresh identifier allocated by the operating system.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AWRITE-JSON-20FUNCTION-29"></a>
 
-##### [function](d49c) `40ants-ai-evals/util:write-json` file value
+##### [function](e56d) `40ants-ai-evals/util:write-json` file value
 
 Persist a `JSON` document with a trailing newline.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3AWRITE-TEXT-20FUNCTION-29"></a>
 
-##### [function](28b8) `40ants-ai-evals/util:write-text` file text
+##### [function](0a93) `40ants-ai-evals/util:write-text` file text
 
 Write `UTF-8` `TEXT`, creating parent directories.
 
@@ -860,123 +860,123 @@ Write `UTF-8` `TEXT`, creating parent directories.
 
 <a id="x-2840ANTS-AI-EVALS-2FUTIL-3A-2APROJECT-ROOT-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](12d1) `40ants-ai-evals/util:*project-root*` nil
+##### [variable](41a4) `40ants-ai-evals/util:*project-root*` nil
 
 Dynamically selected consumer root, distinct from the framework checkout.
 
 
 [40fe]: https://github.com/40ants/ai-evals
-[7d3f]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L11
-[915b]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L2
-[6ecb]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L20
-[5e04]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L29
-[9db2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L49
-[2cbe]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L55
-[514a]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/agents.lisp#L65
-[0e52]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L113
-[0e02]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L128
-[da90]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L143
-[933c]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L154
-[9057]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L166
-[e8cd]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L181
-[9b6f]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L19
-[5e3a]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L193
-[b5b4]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L2
-[4fca]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L20
-[87b5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L201
-[fa86]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L240
-[a458]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L249
-[b674]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L31
-[b301]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L56
-[fd23]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/case-resources.lisp#L90
-[8620]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L197
-[0671]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L2
-[38c5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L209
-[f5d5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L215
-[a2f5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L22
-[b11b]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L221
-[595d]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L227
-[4028]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L235
-[4e82]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L247
-[cdb9]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L271
-[b0b4]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L33
-[5579]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L52
-[9046]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/checks.lisp#L62
-[00bf]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/cli.lisp#L139
-[c2eb]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/cli.lisp#L2
-[b568]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/collector.lisp#L2
-[ddf2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/collector.lisp#L217
-[14c2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L13
-[0fa5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L2
-[fe05]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L25
-[82ba]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L38
-[470a]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L44
-[0298]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L54
-[7cb5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L59
-[bbef]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L64
-[33fc]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L69
-[e0ae]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/environments.lisp#L75
-[a513]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/grading/contracts.lisp#L14
-[5d8d]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/grading/contracts.lisp#L2
-[e65e]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L158
-[61a8]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L2
-[29c2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L220
-[7776]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L229
-[6279]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L307
-[44c2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L326
-[8365]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L69
-[33b7]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/history.lisp#L78
-[55b2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/project.lisp#L1
-[7010]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/project.lisp#L10
-[5689]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L132
-[0dab]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L146
-[cd15]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L19
-[cb81]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L191
-[99d8]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L2
-[9ea2]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L364
-[8219]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/providers/opencode.lisp#L87
-[4cec]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/recovery.lisp#L153
-[65b3]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/recovery.lisp#L17
-[d4b3]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/recovery.lisp#L2
-[bf86]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/runner.lisp#L2
-[089c]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/runner.lisp#L656
-[2748]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/runner.lisp#L66
-[e63d]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/runner.lisp#L720
-[22c3]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/runner.lisp#L96
-[39d0]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/suites.lisp#L12
-[1344]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/suites.lisp#L2
-[24ab]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/suites.lisp#L34
-[67bf]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/suites.lisp#L42
-[4b35]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/suites.lisp#L48
-[dd67]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/suites.lisp#L54
-[18a0]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L101
-[57c5]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L109
-[b73a]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L115
-[f8d0]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L122
-[50c9]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L129
-[819e]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L139
-[168a]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L147
-[7468]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L183
-[9406]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L2
-[2f41]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L206
-[0573]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L21
-[cf21]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L220
-[ee12]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L234
-[878a]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L248
-[b54e]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L254
-[d86d]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L265
-[5118]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L28
-[b35c]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L34
-[45cb]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L40
-[cafc]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L47
-[3332]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L53
-[28b8]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L59
-[d49c]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L69
-[12d1]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L73
-[881c]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L77
-[f5e9]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L82
-[a3ee]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L88
-[0b14]: https://github.com/40ants/ai-evals/blob/96123ef9e1ce24fde1ecfebdb2ae7284628bf6c2/src/util.lisp#L94
+[3211]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L11
+[16bc]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L2
+[b874]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L20
+[569a]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L29
+[9b55]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L49
+[5e99]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L55
+[3288]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/agents.lisp#L65
+[e3dd]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L113
+[d69e]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L128
+[d6a0]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L143
+[ffca]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L154
+[458b]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L166
+[b96e]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L181
+[b374]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L19
+[724c]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L193
+[70d7]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L2
+[7e21]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L20
+[c0c2]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L201
+[c606]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L240
+[4a86]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L249
+[96ec]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L31
+[5b99]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L56
+[ca32]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/case-resources.lisp#L90
+[6747]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L197
+[c8be]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L2
+[a1bb]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L209
+[b563]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L215
+[4d91]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L22
+[251f]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L221
+[940f]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L227
+[7301]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L235
+[bc06]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L247
+[48c0]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L271
+[03b9]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L33
+[9375]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L52
+[1340]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/checks.lisp#L62
+[4fc4]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/cli.lisp#L139
+[6f19]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/cli.lisp#L2
+[2816]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/collector.lisp#L2
+[09bd]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/collector.lisp#L217
+[7cc2]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L13
+[a433]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L2
+[9999]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L25
+[d401]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L38
+[b6b2]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L44
+[2583]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L54
+[83b7]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L59
+[c322]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L64
+[4257]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L69
+[c7c6]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/environments.lisp#L75
+[6b90]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/grading/contracts.lisp#L14
+[d7f6]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/grading/contracts.lisp#L2
+[263b]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L158
+[8399]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L2
+[c5bf]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L220
+[281a]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L229
+[f5fc]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L307
+[f7eb]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L326
+[9f6e]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L69
+[b01d]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/history.lisp#L78
+[a751]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/project.lisp#L1
+[8f73]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/project.lisp#L10
+[5c3f]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L132
+[5681]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L146
+[8021]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L19
+[bef6]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L191
+[ac37]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L2
+[8777]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L364
+[4db0]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/providers/opencode.lisp#L87
+[28ab]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/recovery.lisp#L153
+[e559]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/recovery.lisp#L17
+[6526]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/recovery.lisp#L2
+[c113]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/runner.lisp#L2
+[fd9d]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/runner.lisp#L656
+[af7e]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/runner.lisp#L66
+[e97e]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/runner.lisp#L720
+[dbe5]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/runner.lisp#L96
+[5d80]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/suites.lisp#L12
+[4033]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/suites.lisp#L2
+[c6f0]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/suites.lisp#L34
+[a2ea]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/suites.lisp#L42
+[408f]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/suites.lisp#L48
+[3175]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/suites.lisp#L54
+[8b50]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L101
+[fb95]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L109
+[3578]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L115
+[4a88]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L122
+[cb36]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L129
+[7634]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L139
+[9242]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L147
+[6fe9]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L183
+[278c]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L2
+[3390]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L206
+[a01c]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L21
+[9f95]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L220
+[198f]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L234
+[a189]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L248
+[768d]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L254
+[947c]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L265
+[03d3]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L28
+[d433]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L34
+[3e17]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L40
+[683b]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L47
+[9fec]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L53
+[0a93]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L59
+[e56d]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L69
+[41a4]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L73
+[c353]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L77
+[6214]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L82
+[ab7d]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L88
+[99cb]: https://github.com/40ants/ai-evals/blob/4b88bc405a248090a500adb4cb1a7b897dbc7a11/src/util.lisp#L94
 [1c51]: https://github.com/40ants/ai-evals/issues
 [c15d]: https://quickdocs.org/asdf
 [3a1f]: https://quickdocs.org/babel
