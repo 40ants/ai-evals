@@ -34,6 +34,11 @@ The repository provides a pinned Nix toolchain and Roswell entry point. Enter it
 with a projectRoot argument pointing to the consumer, then use qlot exec ai-evals.
 Use the consumer's qlfile.lock for Lisp dependencies; no global installation is needed.
 
+For a Roswell installation into an initialized Qlot project, run
+qlot exec ros install 40ants/ai-evals, then invoke .qlot/bin/ai-evals help.
+The local command does not require adding .qlot/bin to the global PATH.
+For model runs, enter the pinned Nix environment to provision the external tools.
+
 A project declares defaultSuite, suiteCatalog, systems, snapshotPaths and optionally
 testSystem in evals/project.json. The suite catalog gives each skillName, skillPath,
 config and environmentProfile. Relative paths resolve against the consuming project,

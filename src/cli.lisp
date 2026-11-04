@@ -43,13 +43,14 @@
 (-> help ()
     t)
 (defun help ()
-  (format t "From the project nix-shell, after qlot install:~%~%")
+  (format t "In the project nix-shell use: qlot exec ai-evals COMMAND~%")
+  (format t "After qlot exec ros install 40ants/ai-evals use: .qlot/bin/ai-evals COMMAND~%~%")
   (dolist (command '("test" "suites" "run --suite example --filter smoke --agent all"
                      "run --suite all --group all" "run --label baseline" "run --filter smoke"
                      "run --agent opencode --filter smoke" "run --agent all --filter smoke"
                      "run --group all --repeat 3" "run --ablation" "run --ref HEAD"
                      "checks" "history" "compare BEFORE AFTER" "replay RUN_ID_OR_DIRECTORY" "view"))
-    (format t "  qlot exec ros roswell/ai-evals.ros ~A~%" command)))
+    (format t "  ai-evals ~A~%" command)))
 
 (-> dispatch (string hash-table list)
     integer)

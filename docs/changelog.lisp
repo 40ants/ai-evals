@@ -4,6 +4,10 @@
 (in-package #:40ants-ai-evals-docs/changelog)
 
 (defchangelog (:ignore-words ("ASDF" "API" "APM" "Codex" "OpenCode" "Promptfoo" "MCP" "Qlot" "UIOP" "Serapeum" "JSON"))
+  (0.5.1 2026-11-04
+         "* Bootstrapped the system class dependency before Roswell probes the main system,
+so installation into an empty project-local Quicklisp reaches script installation.
+* Documented invocation of the locally installed command.")
   (0.5.0 2026-11-04
          "* Extracted the evaluation library into its own repository.
 * Separated framework, consuming project, runtime dependencies and archived inputs.
