@@ -1,0 +1,52 @@
+{
+  "name": "LINTER",
+  "on": {
+    "push": {
+      "branches": [
+        "master"
+      ]
+    },
+    "pull_request": null,
+    "schedule": [
+      {
+        "cron": "0 10 * * 1"
+      }
+    ]
+  },
+  "jobs": {
+    "linter": {
+      "permissions": {
+        "contents": "read"
+      },
+      "runs-on": "macos-15",
+      "env": {
+        "OS": "macos-15"
+      },
+      "steps": [
+        {
+          "name": "Checkout",
+          "uses": "actions/checkout@v5"
+        },
+        {
+          "name": "Install Nix",
+          "uses": "cachix/install-nix-action@v31"
+        },
+        {
+          "name": "Install Lisp dependencies",
+          "run": "nix-shell --run 'qlot install'",
+          "shell": "bash"
+        },
+        {
+          "name": "Prepare job dependencies",
+          "run": "nix-shell --run 'qlot exec ros -s 40ants-linter/main -q'",
+          "shell": "bash"
+        },
+        {
+          "name": "linter",
+          "run": "nix-shell --run 'qlot exec 40ants-linter --system 40ants-ai-evals,40ants-ai-evals-common-checks,40ants-ai-evals-docs,40ants-ai-evals-tests,40ants-ai-evals-ci'",
+          "shell": "bash"
+        }
+      ]
+    }
+  }
+}

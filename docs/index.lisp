@@ -26,7 +26,8 @@ checks their results and preserves the evidence needed to compare skill revision
   (@overview section)
   (@quickstart section)
   (40ants-ai-evals system)
-  (@configuration section) (@execution section) (@extensions section) (@api section))
+  (@configuration section) (@execution section) (@extensions section)
+  (@continuous-integration section) (@api section))
 
 (defsection @overview (:title "What AI Evals adds to Promptfoo")
   "Promptfoo provides the evaluation engine, providers, repeated runs and results
@@ -444,6 +445,25 @@ MCP factories stay with the tests which need them.
 See evals/docs/adapter-protocol.md and evals/docs/extending-checks.md for the transport
 and extension contracts. The extraction decision is recorded in
  evals/docs/decisions/0004-reusable-library.md.")
+
+(defsection @continuous-integration (:title "Continuous integration")
+  "The separate package-inferred system 40ants-ai-evals-ci follows the same layout
+as the other 40ants libraries: 40ants-ai-evals-ci.asd loads src/ci.lisp, which defines
+the workflows through 40ants-ci. Regenerate the checked-in workflow files with:
+
+```sh
+nix-shell
+qlot install
+qlot exec ros -s 40ants-ai-evals-ci -q
+```
+
+Loading this system writes .github/workflows/ci.yml, docs.yml and linter.yml.
+Edit the Lisp definitions and regenerate these files together. The workflows run
+on pushes to master, pull requests and the weekly Monday schedule. They execute
+offline tests, strict documentation builds and lint checks through the pinned Nix
+environment on a macos-15 Apple Silicon runner. Only SBCL is supported here.
+The jobs use read-only repository permissions and make no model calls.
+The production system does not load the CI system or depend on 40ants-ci.")
 
 (defsection-copy @readme @index)
 (defautodoc @api (:system "40ants-ai-evals"))

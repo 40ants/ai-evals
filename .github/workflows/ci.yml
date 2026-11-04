@@ -1,0 +1,47 @@
+{
+  "name": "CI",
+  "on": {
+    "push": {
+      "branches": [
+        "master"
+      ]
+    },
+    "pull_request": null,
+    "schedule": [
+      {
+        "cron": "0 10 * * 1"
+      }
+    ]
+  },
+  "jobs": {
+    "tests": {
+      "permissions": {
+        "contents": "read"
+      },
+      "runs-on": "macos-15",
+      "env": {
+        "OS": "macos-15"
+      },
+      "steps": [
+        {
+          "name": "Checkout",
+          "uses": "actions/checkout@v5"
+        },
+        {
+          "name": "Install Nix",
+          "uses": "cachix/install-nix-action@v31"
+        },
+        {
+          "name": "Install Lisp dependencies",
+          "run": "nix-shell --run 'qlot install'",
+          "shell": "bash"
+        },
+        {
+          "name": "tests",
+          "run": "nix-shell --run 'qlot exec ai-evals test'",
+          "shell": "bash"
+        }
+      ]
+    }
+  }
+}
