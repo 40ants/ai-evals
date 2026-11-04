@@ -319,9 +319,9 @@
       (visit #P"/etc/codex/skills/"))
     (coerce (nreverse result) 'vector)))
 
-(-> codex-provider (hash-table pathname string &optional t)
+(-> codex-provider (hash-table pathname string &optional t t)
     hash-table)
-(defun codex-provider (profile auth-dir variant &optional (harness (framework-root)))
+(defun codex-provider (profile auth-dir variant &optional (harness (framework-root)) suite-id)
   (let* ((template (read-json (at (at (root) (or *suite-path* (suite-path))) "promptfooconfig.json")))
          (provider (if (field template "providers")
                        (aref (field template "providers") 0)
@@ -358,8 +358,7 @@
           (setf (gethash name (gethash "cli_env" settings)) value
                 (gethash (concatenate 'string "shell_environment_policy.set." name)
                          (gethash "cli_config" settings)) value))))
-    (let* ((entry (find-suite
-                   (car (last (pathname-directory (pathname (or *suite-path* (suite-path))))))))
+    (let* ((entry (find-suite suite-id))
            (project (at (uiop:pathname-parent-directory-pathname harness) "project/"))
            (descriptor (40ants-ai-evals/environments:preflight
                         (field entry "environmentProfile") :check-tools nil)))
@@ -398,7 +397,7 @@
                                      (if (equal variant "without-skill") "{{taskWithoutSkill}}"
                                          (format nil "{{task_~A}}" agent)))) prompts)
           (push (if (equal agent "codex")
-                    (codex-provider (field profiles agent) auth-dir variant (archive-framework-root run-dir))
+                    (codex-provider (field profiles agent) auth-dir variant (archive-framework-root run-dir) (gethash "suite" flags))
                     (dict "id" (concatenate 'string "file://" (namestring (at (archive-framework-root run-dir) "evals/lib/opencode-provider.cjs"))) "label" label
                           "prompts" (vector label)
                           "config" (dict "runDir" (namestring run-dir) "server" server
@@ -419,6 +418,20 @@
     (write-json (at suite "selected-cases.json") (coerce cases 'vector))
     (write-json (at suite "effective.json") config)))
 
+(-> project-git-state () hash-table)
+(defun project-git-state ()
+  "Read only a consumer's own Git repository, permitting non-Git input projects."
+  (multiple-value-bind (out err status)
+      (run-command '("git" "rev-parse" "--show-toplevel") :allow-failure t)
+    (declare (ignore err))
+    (if (and (zerop status)
+             (equal (truename (root))
+                    (truename (uiop:ensure-directory-pathname
+                               (string-trim '(#\Space #\Newline #\Return) out)))))
+        (dict "commit" (execute '("git" "rev-parse" "HEAD"))
+              "status" (execute '("git" "status" "--porcelain")))
+        (dict "commit" :null "status" :null))))
+
 (-> manifest (string t hash-table list list hash-table &optional hash-table)
     hash-table)
 (defun manifest (id run-dir flags cases variants tools &optional environment)
@@ -432,7 +445,7 @@
           (setf (gethash "executionTimeoutMs" profile) (opencode-execution-timeout flags)))
         (setf (gethash agent profiles) profile)))
     (dict "id" id "label" (option flags "label" "unlabelled") "started" (now)
-          "suite" (or (gethash "suite" flags) "writing-common-lisp")
+          "suite" (field (find-suite (gethash "suite" flags)) "id")
           "skillName" (field (find-suite (gethash "suite" flags)) "skillName")
           "environment" (or environment
                             (40ants-ai-evals/environments:preflight
@@ -442,8 +455,12 @@
           "skillSource" (or (gethash "ref" flags) (gethash "skill-dir" flags) "working-tree")
           "skillHash" (digest-tree (at run-dir "skill/"))
           "suiteHash" (digest-tree (at run-dir "harness/"))
-          "gitCommit" (execute '("git" "rev-parse" "HEAD"))
-          "gitStatus" (execute '("git" "status" "--porcelain"))
+          "gitCommit" (field (project-git-state) "commit")
+          "gitStatus" (field (project-git-state) "status")
+          "frameworkVersion" (asdf:component-version (asdf:find-system "40ants-ai-evals"))
+          "frameworkRevision" (or (uiop:getenv "SKILL_EVAL_ENGINE_REVISION") "working-tree")
+          "frameworkHash" (digest-tree (archive-framework-root run-dir))
+          "projectInputsHash" (digest-tree (archive-project-root run-dir))
           "agents" (coerce agents 'vector) "profiles" profiles
           "model" (or (field single "model") :null) "effort" (or (field single "effort") :null)
           "repeat" (integer-option flags "repeat" 1 1 20)
@@ -573,19 +590,25 @@ Only the local export is enriched; Promptfoo's database is left untouched."
     string)
 (defun grader-fingerprint ()
   (let ((hashes (dict)))
-    (dolist (dir '("src/" "checks/" "evals/lib/" "roswell/"))
-      (setf (gethash dir hashes) (digest-tree (at (framework-root) dir))))
-    (dolist (file '("docs/changelog.lisp" "qlfile.lock" "evals/suites.json"))
-      (when (probe-file (at (root) file))
-        (setf (gethash file hashes) (digest-file (at (if (equal file "docs/changelog.lisp") (framework-root) (root)) file)))))
-    (dolist (entry (40ants-ai-evals/suites:catalog))
-      (let ((file (field entry "config")))
-        (when (probe-file (at (root) file))
-          (setf (gethash file hashes) (digest-file (at (root) file))))
-        (setf (gethash (concatenate 'string (field entry "id") "/inputs") hashes)
-              (digest-tree (at (root) (suite-path (field entry "id")))))))
-    (dolist (asd (uiop:directory-files (root) "*.asd"))
-      (setf (gethash (file-namestring asd) hashes) (digest-file asd)))
+    (dolist (dir '("src/" "checks/" "evals/lib/" "roswell/" "nix/"))
+      (setf (gethash (concatenate 'string "engine/" dir) hashes)
+            (digest-tree (at (framework-root) dir))))
+    (dolist (file '("docs/changelog.lisp" "qlfile" "qlfile.lock" "shell.nix"))
+      (setf (gethash (concatenate 'string "engine/" file) hashes)
+            (digest-file (at (framework-root) file))))
+    (when (probe-file (at (root) "evals/project.json"))
+      (setf (gethash "project/config" hashes) (digest-file (at (root) "evals/project.json"))))
+    (dolist (path (sequence-list (or (field (project-config) "snapshotPaths") #("evals/"))))
+      (unless (safe-relative-p (string-right-trim "/" path))
+        (error "Unsafe project fingerprint input: ~A" path))
+      (let ((source (at (root) path)))
+        (when (probe-file source)
+          (setf (gethash (concatenate 'string "project/" path) hashes)
+                (if (uiop:directory-exists-p source) (digest-tree source) (digest-file source))))))
+    (loop for (tag base) in (list (list "engine" (framework-root)) (list "project" (root))) do
+      (dolist (asd (uiop:directory-files base "*.asd"))
+        (setf (gethash (format nil "~A/~A" tag (file-namestring asd)) hashes)
+              (digest-file asd))))
     (ironclad:byte-array-to-hex-string
      (ironclad:digest-sequence :sha256 (babel:string-to-octets (encode hashes) :encoding :utf-8)))))
 

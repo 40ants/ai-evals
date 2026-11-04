@@ -66,7 +66,7 @@ qlot exec ros roswell/ai-evals.ros checks
 ```
 
 The command prints JSON and makes no model calls. The current default suite
-loads 28 independently selectable checks.
+loads the checks declared by the consuming project.
 
 ## Implement an independent extension
 
@@ -116,14 +116,13 @@ Then add the rule to the appropriate case's `vars.checks`:
 {"check":"project/no-fixme","params":{"file":{"$var":"file"}}}
 ```
 
-No core or built-in check module changes are needed. Keep production extensions
-under `evals/checks/`: the runner snapshots this tree, and replay fingerprints
-include its code. A third-party system installed by Qlot can omit `asd`; its
+No core or built-in check module changes are needed. Include production extension paths in the consuming project's
+`evals/project.json` `snapshotPaths`; snapshot and replay fingerprints include their code. A third-party system installed by Qlot can omit `asd`; its
 version must be fixed in `qlfile.lock`. Run `qlot install` after adding library
 dependencies. ASDF extensions are trusted project code.
 
-`t/fixtures/example-check/` is a runnable version of this example. Integration
-tests invoke it in a separate Roswell process with both clean text and FIXME text.
+The independent consumer test in `t/consumer-test.lisp` demonstrates a project-owned
+ASDF check in a separate snapshot. Domain-specific checks belong to the consumer.
 
 ## Handler and result contract
 

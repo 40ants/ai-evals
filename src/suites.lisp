@@ -24,8 +24,9 @@
         (dolist (key '("skillPath" "config"))
           (let ((path (string-right-trim "/" (or (field entry key) ""))))
             (unless (safe-relative-p path) (error "Unsafe suite ~A path: ~A" id path))))
-        (unless (equal id (field entry "skillName"))
-          (error "Suite ~A must name its native skill exactly" id))))
+        (unless (and (stringp (field entry "skillName"))
+                     (plusp (length (field entry "skillName"))))
+          (error "Suite ~A must declare its native skill name" id))))
     entries))
 
 (-> find-suite (&optional (or null string))

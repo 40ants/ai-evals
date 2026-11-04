@@ -31,12 +31,26 @@ name: echo
 description: Write a requested note.
 ---
 Write the requested note.")
+            (write-text (at ,project "evals/checks/probe/consumer-probe-checks.asd")
+                        "(asdf:defsystem \"consumer-probe-checks\" :class :package-inferred-system :depends-on (\"consumer-probe-checks/checks\"))")
+            (write-text (at ,project "evals/checks/probe/checks.lisp")
+                        "(uiop:define-package #:consumer-probe-checks/checks
+  (:use #:cl)
+  (:import-from #:40ants-ai-evals/checks #:register-check #:context-sample #:outcome)
+  (:import-from #:40ants-ai-evals/util #:field))
+(in-package #:consumer-probe-checks/checks)
+(defun ready (context params)
+  (declare (ignore params))
+  (outcome \"consumer-ready\" (equal \"ready\" (field (context-sample context) \"files\" \"note.txt\"))))
+(register-check \"consumer/ready\" 'ready)")
             (write-json (at ,project "evals/echo/promptfooconfig.json")
                         (dict "description" "Independent note skill"
                               "defaultTest" (dict "vars" (dict "checkSystems"
-                                (vector (dict "system" "40ants-ai-evals-common-checks"))
+                                (vector (dict "system" "40ants-ai-evals-common-checks")
+                                        (dict "system" "consumer-probe-checks" "asd" "evals/checks/probe/consumer-probe-checks.asd"))
                                 "checks" (vector (dict "check" "files/text-contains"
-                                                       "params" (dict "file" "note.txt" "contains" "ready")))))))
+                                                       "params" (dict "file" "note.txt" "contains" "ready"))
+                                                  (dict "check" "consumer/ready"))))))
             (write-json (at ,project "evals/echo/cases.json")
                         (vector (dict "description" "smoke"
                                       "vars" (dict "suite" "echo" "id" "smoke"
@@ -76,5 +90,17 @@ Write the requested note.")
                   :timeout 60 :allow-failure t)
                (ok (zerop status) err)
                (ok (search "\"echo\"" out))
-               (ok (not (search "writing-common-lisp" out)))))
+               (ok (not (search "writing-common-lisp" out))))
+             (multiple-value-bind (out err status)
+                 (run-command
+                  (list "env"
+                        (format nil "SKILL_EVAL_PROJECT_ROOT=~A" (archive-project-root run))
+                        (format nil "SKILL_EVAL_ENGINE_ROOT=~A" (archive-framework-root run))
+                        "qlot" "exec" "ros"
+                        (namestring (at (archive-framework-root run) "roswell/ai-evals.ros"))
+                        "checks" "--suite" "echo")
+                  :directory (archive-project-root run) :timeout 60 :allow-failure t)
+               (ok (zerop status) err)
+               (ok (search "files/text-contains" out))
+               (ok (search "consumer/ready" out))))
         (remove-directory run)))))

@@ -28,7 +28,7 @@ function runLisp(harness, request, timeout, overallTimeout, abortSignal) {
     }
     const script = path.join(harness, 'roswell/ai-evals.ros');
     const child = spawn('ros', ['-Q', '--', script, 'provider'], {
-      cwd: harness,
+      cwd: process.env.SKILL_EVAL_PROJECT_ROOT || process.cwd(),
       env: process.env,
       shell: false,
       detached: true,

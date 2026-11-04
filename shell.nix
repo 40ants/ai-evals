@@ -1,4 +1,4 @@
-{ projectRoot ? builtins.getEnv "PWD" }:
+{ projectRoot ? builtins.getEnv "PWD", engineRevision ? "working-tree" }:
 let
   engineRoot = builtins.path {
     path = ./.;
@@ -148,6 +148,7 @@ pkgs.mkShell (environments.env // {
     export QLOT_CACHE_DIRECTORY="${projectRoot}/.evals/qlot-cache"
     export SKILL_EVAL_PROJECT_ROOT="${projectRoot}"
     export SKILL_EVAL_ENGINE_ROOT="${engineRoot}"
+    export SKILL_EVAL_ENGINE_REVISION="${engineRevision}"
     export SKILL_EVAL_DEPENDENCY_ROOT="${projectRoot}"
     export APM_CACHE_DIR="${projectRoot}/.evals/apm-cache"
     echo "Eval tools: promptfoo 0.125.1, Codex SDK/CLI 0.156.1, OpenCode 2.2.1, APM 0.31.0, Roswell ${pkgs.roswell.version}, Qlot ${pkgs.sbclPackages.qlot.version} (pinned Nix store)"

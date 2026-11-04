@@ -51,6 +51,14 @@
            (cases (list (dict "vars" vars))))
       (unwind-protect
            (progn
+             (let* ((catalog-file (at project "evals/suites.json"))
+                    (entries (read-json catalog-file))
+                    (config (read-json (at project "evals/project.json"))))
+               (setf (gethash "id" (aref entries 0)) "note-contract"
+                     (gethash "defaultSuite" config) "note-contract")
+               (write-json catalog-file entries)
+               (write-json (at project "evals/project.json") config))
+             (setf (gethash "suite" vars) "note-contract")
              (40ants-ai-evals/runner::snapshot scratch (dict))
              (40ants-ai-evals/runner::prepare-fixtures
               scratch cases '("with-skill" "without-skill") '("codex" "opencode"))
@@ -67,7 +75,7 @@
              (let* ((profiles (dict "codex" (profile-for "codex" (dict))
                                     "opencode" (profile-for "opencode" (dict))))
                     (config (read-json (40ants-ai-evals/runner::effective-config
-                                       scratch cases (dict "agent" "all" "ablation" t)
+                                       scratch cases (dict "agent" "all" "ablation" t "suite" "note-contract")
                                        scratch profiles (dict "baseUrl" "http://127.0.0.1:1234")))))
                (ok (= 4 (length (field config "providers"))))
                (ok (= 4 (length (field config "prompts"))))

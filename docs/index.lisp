@@ -11,7 +11,7 @@
   (list :theme (find-symbol "40ANTS-THEME" "40ANTS-DOC-THEME-40ANTS")))
 
 (defsection @index (:title "40ants-ai-evals — Reusable skill evaluations"
-                    :ignore-words ("40A" "API" "APM" "ASDF" "CLI" "CL" "CI"
+                    :ignore-words ("40A" "API" "APM" "ASDF" "ASD" "UI" "CLI" "CL" "CI"
                                    "Codex" "Common Lisp" "Git" "GitHub" "HTTP"
                                    "JSON" "MCP" "Nix" "OpenCode" "Promptfoo"
                                    "Qlot" "Quicklisp" "README" "REPL" "Roswell"

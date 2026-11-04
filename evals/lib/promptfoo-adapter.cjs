@@ -24,7 +24,7 @@ module.exports = async function lispAssertion(output, context) {
     }
     const answer = await new Promise((resolve, reject) => {
       const child = spawn('ros', ['-Q', '--', path.join(harness, 'roswell/ai-evals.ros'), 'assert'], {
-        cwd: harness, env: process.env, shell: false, detached: true,
+        cwd: process.env.SKILL_EVAL_PROJECT_ROOT || process.cwd(), env: process.env, shell: false, detached: true,
         stdio: ['pipe', 'pipe', 'pipe'],
       });
       let stdout = '', stderr = '', settled = false;
