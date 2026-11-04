@@ -1,0 +1,4 @@
+.evals/
+.eval-cache/
+.qlot/
+docs/build/

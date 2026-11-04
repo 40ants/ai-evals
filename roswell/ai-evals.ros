@@ -1,0 +1,8 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- "$0" "$@"
+|#
+(require :asdf)
+(load (merge-pathnames "entry.lisp" (uiop:pathname-directory-pathname *load-truename*)))
+(in-package #:40ants-ai-evals/roswell/ai-evals)
