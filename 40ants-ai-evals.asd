@@ -2,12 +2,16 @@
 ;; Roswell probes QL:WHERE-IS-SYSTEM before QL:QUICKLOAD, so the class
 ;; dependency must already be discoverable while it reads this definition.
 #+ros.init
-(unless (asdf:find-system "40ants-asdf-system" nil)
-  ;; Roswell's project.lisp lookup catches errors without printing their cause.
-  (handler-bind ((error (lambda (condition)
-                         (format *error-output* "~&Cannot prepare 40ants-ai-evals installation: ~A~%"
-                                 condition))))
-    (uiop:symbol-call :ql :quickload "40ants-asdf-system" :silent t)))
+(unless (find-class 'asdf::40ants-asdf-system nil)
+  ;; Quicklisp must finish discovery before starting a fresh ASDF load. Sharing
+  ;; Roswell's active session caches a missing system before its release is installed.
+  (handler-case
+      (let ((asdf/session:*asdf-session* nil))
+        (uiop:symbol-call :ql :quickload "40ants-asdf-system" :silent t))
+    (error (condition)
+      ;; Roswell's project.lisp lookup otherwise hides this exception.
+      (format *error-output* "~&Cannot prepare 40ants-ai-evals installation: ~A~%" condition)
+      (error condition))))
 
 (asdf:defsystem "40ants-ai-evals"
   :description "Reproducible skill evaluations through Promptfoo"
