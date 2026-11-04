@@ -1,0 +1,13 @@
+[
+  {
+    "description": "smoke: greeting for Ada",
+    "vars": {
+      "id": "smoke",
+      "group": "development",
+      "task": "Use $greeting-note. Write a greeting note for Ada in greeting.txt. Preserve the other files.",
+      "fixtures": "cases/smoke/fixtures/",
+      "outputFile": "greeting.txt",
+      "expectedText": "Hello, Ada!"
+    }
+  }
+]

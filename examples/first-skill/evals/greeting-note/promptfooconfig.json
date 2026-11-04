@@ -1,0 +1,55 @@
+{
+  "description": "First greeting-note skill evaluation",
+  "defaultTest": {
+    "vars": {
+      "checkSystems": [
+        {
+          "system": "40ants-ai-evals-common-checks"
+        }
+      ],
+      "checks": [
+        {
+          "check": "agent/skill-read",
+          "params": {
+            "expected": true
+          }
+        },
+        {
+          "check": "files/text-contains",
+          "params": {
+            "file": {
+              "$var": "outputFile"
+            },
+            "contains": {
+              "$var": "expectedText"
+            }
+          }
+        },
+        {
+          "check": "files/preserved",
+          "params": {
+            "protected": "KEEP.txt",
+            "fixtures": {
+              "$var": "fixtures"
+            }
+          }
+        },
+        {
+          "check": "source/scope",
+          "params": {
+            "file": {
+              "$var": "outputFile"
+            },
+            "fixtures": {
+              "$var": "fixtures"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "evaluateOptions": {
+    "maxConcurrency": 1
+  },
+  "tests": "file://cases.json"
+}

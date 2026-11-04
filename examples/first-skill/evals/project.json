@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "defaultSuite": "greeting-note",
+  "suiteCatalog": "evals/suites.json",
+  "snapshotPaths": [
+    "evals/",
+    "qlfile",
+    "qlfile.lock",
+    "shell.nix"
+  ]
+}

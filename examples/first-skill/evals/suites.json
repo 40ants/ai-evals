@@ -1,0 +1,9 @@
+[
+  {
+    "id": "greeting-note",
+    "skillName": "greeting-note",
+    "skillPath": "skills/greeting-note/",
+    "environmentProfile": "default",
+    "config": "evals/greeting-note/promptfooconfig.json"
+  }
+]

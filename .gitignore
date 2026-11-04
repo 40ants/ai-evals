@@ -2,3 +2,4 @@
 .eval-cache/
 .qlot/
 docs/build/
+.DS_Store
