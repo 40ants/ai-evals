@@ -29,7 +29,10 @@
         },
         {
           "name": "Install Nix",
-          "uses": "cachix/install-nix-action@v31"
+          "uses": "cachix/install-nix-action@v31",
+          "with": {
+            "nix_path": "nixpkgs=https://github.com/NixOS/nixpkgs/archive/885ba4d038f10c3d17d7a92e8c3cc185b99c9158.tar.gz"
+          }
         },
         {
           "name": "Install Lisp dependencies",

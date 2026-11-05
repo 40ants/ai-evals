@@ -20,7 +20,9 @@
                  :permissions '(:contents "read")
                  :steps (append
                          (list (action "Checkout" "actions/checkout@v5")
-                               (action "Install Nix" "cachix/install-nix-action@v31")
+                               (action "Install Nix" "cachix/install-nix-action@v31"
+                                       ;; Match shell.nix for nix-shell's bootstrap Bash.
+                                       :nix_path "nixpkgs=https://github.com/NixOS/nixpkgs/archive/885ba4d038f10c3d17d7a92e8c3cc185b99c9158.tar.gz")
                                (sh "Install Lisp dependencies" "nix-shell --run 'qlot install'"))
                          (when prepare
                            (list (sh "Prepare job dependencies"
