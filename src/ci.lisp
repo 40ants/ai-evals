@@ -38,7 +38,8 @@
   :by-cron "0 10 * * 1"
   :on-pull-request t
   :cache t
-  :jobs ((build-docs :asdf-system "40ants-ai-evals-docs")))
+  :jobs ((build-docs :asdf-system "40ants-ai-evals-docs"
+                     :qlot-version "1.8.2")))
 
 (defworkflow linter
   :on-push-to "master"
@@ -46,6 +47,7 @@
   :on-pull-request t
   :cache t
   :jobs ((40ants-ci/jobs/linter:linter
+          :qlot-version "1.8.2"
           :asdf-systems ("40ants-ai-evals"
                          "40ants-ai-evals-common-checks"
                          "40ants-ai-evals-docs"
