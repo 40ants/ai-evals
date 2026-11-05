@@ -33,13 +33,14 @@
   :on-pull-request t
   :jobs ((nix-job "tests" "qlot exec ai-evals test")))
 
+;; Qlot 1.8.3 fixes uninstalling cached releases whose directories are symlinks.
 (defworkflow docs
   :on-push-to "master"
   :by-cron "0 10 * * 1"
   :on-pull-request t
   :cache t
   :jobs ((build-docs :asdf-system "40ants-ai-evals-docs"
-                     :qlot-version "1.8.2")))
+                     :qlot-version "1.8.3")))
 
 (defworkflow linter
   :on-push-to "master"
@@ -47,7 +48,7 @@
   :on-pull-request t
   :cache t
   :jobs ((40ants-ci/jobs/linter:linter
-          :qlot-version "1.8.2"
+          :qlot-version "1.8.3"
           :asdf-systems ("40ants-ai-evals"
                          "40ants-ai-evals-common-checks"
                          "40ants-ai-evals-docs"

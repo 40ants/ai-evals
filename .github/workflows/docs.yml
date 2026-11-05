@@ -31,7 +31,7 @@
           "uses": "40ants/setup-lisp@v4",
           "with": {
             "asdf-system": "40ants-ai-evals-docs",
-            "qlot-version": "1.8.2",
+            "qlot-version": "1.8.3",
             "cache": "true"
           }
         },
