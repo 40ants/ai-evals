@@ -3,12 +3,12 @@
   (:import-from #:40ants-doc #:defsection #:defsection-copy)
   (:import-from #:40ants-doc/autodoc #:defautodoc)
   (:import-from #:docs-config #:docs-config)
+  (:import-from #:40ants-doc-theme-40ants #:40ants-theme)
   (:import-from #:40ants-ai-evals-docs/changelog #:@changelog)
   (:export #:@index #:@readme #:@changelog))
 (in-package #:40ants-ai-evals-docs/index)
 (defmethod docs-config ((system (eql (asdf:find-system "40ants-ai-evals-docs"))))
-  (asdf:load-system "40ants-doc-theme-40ants")
-  (list :theme (find-symbol "40ANTS-THEME" "40ANTS-DOC-THEME-40ANTS")))
+  (list :theme '40ants-theme))
 
 (defsection @index (:title "40ants-ai-evals — Reusable skill evaluations"
                     :ignore-words ("40A" "AI" "API" "APM" "ASDF" "ASD" "UI" "CLI" "CL" "CI"
