@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+    <channel>
+        <title>40ants-ai-evals-docs ChangeLog</title>
+        <link>https://github.com/40ants/ai-evals</link>
+        <generator>xml-emitter</generator>
+        <language>en-us</language>
+        <item>
+            <title>0.5.1  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Bootstrapped the system class dependency before Roswell probes the main system,
+so installation into an empty project-local Quicklisp reaches script installation.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Documented invocation of the locally installed command.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.5.0  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Extracted the evaluation library into its own repository.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Separated framework, consuming project, runtime dependencies and archived inputs.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Loaded project-defined fixture environments and assertions through &lt;code&gt;ASDF&lt;/code&gt; extensions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Preserved old combined snapshots and introduced independent engine/project snapshots.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.10  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Aligned the browser bootstrap helper with the pinned Python 3.13 runtime,
+so browser diagnostics reach Playwright instead of failing on unsupported packages.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Preserved existing Nix and runner files and inherited an explicitly supplied browser.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Kept complete strict-build output and exposed root changelog sections.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Used available image inspection tools without substituting custom pixel heuristics.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.9  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Prepared real unavailable-tool and unavailable-browser scenarios through
+literal per-workspace environment overrides, including nested Qlot commands.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Created reproducible tracked-source baselines for lint fixtures while respecting
+ignored vendor files, and preserved environment metadata during grading.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Clarified automatic selection of Rove testing and live Lisp evaluation skills.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.8  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Preserved source pathnames beneath isolated compilation caches so Rove
+discovers package-inferred test suites instead of reporting zero tests.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Kept dependency outputs shared while confining candidate outputs to each workspace.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Made Rove guidance record condition predicates as assertions and propagate
+failed suites through the &lt;code&gt;ASDF&lt;/code&gt; test operation and process exit status.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.7  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Recorded exact batch run ownership instead of discovering new directories,
+so concurrent diagnostic evaluations cannot enter another suite&apos;s batch index.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Retained the run identifier when suite preparation fails before model execution.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.6  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Prepared local Git baseline revisions for documentation fixtures so
+strict source-link generation starts from a valid checkout.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Used the installed documentation builder through Qlot without requiring an executable
+wrapper or dependency installation.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Kept pinned dependency bootstrap diagnostics in the startup log while
+preserving candidate warnings and strict documentation failures in tool output.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Corrected &lt;code&gt;JSON&lt;/code&gt; parsing examples to the installed Yason keyword and boolean
+representations, preserving semantic round-trips without custom Unicode rewriting.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.5  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Rejected accidental external OpenCode tool directories while retaining
+read access to pinned dependencies, binaries and captured tool output.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Recommended relative paths inside isolated evaluation workspaces.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.4  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Checked rejected-input error reports through runtime observations,
+including custom conditions, instead of requiring one error-call syntax.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Verified positive real inputs and several distinct rejected values.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.3  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Increased the default OpenCode execution deadline to 630 seconds.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Kept file resource inventories atomic in Promptfoo to prevent duplicate samples.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Observed recovered Lisp runtime deadlines without depending on candidate handlers.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Clarified project-only cache cleanup and preserved spaces in helper paths.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.2  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added fractional check scores while preserving mandatory pass decisions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Awarded half credit for inline Serapeum return types and full credit for
+return types on a separate line. Missing signatures remain failures.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.1  (2026-11-04)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Isolated sample &lt;code&gt;ASDF&lt;/code&gt; system discovery from unrelated fixture projects.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added prepared runtime instructions and Qlot execution preflight to all suites.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Supplied real &lt;code&gt;ASDF&lt;/code&gt; project fixtures for the original Lisp writing tasks.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Routed the prepared agent shell through Qlot for complete compound commands.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Retained &lt;code&gt;UIOP&lt;/code&gt; bootstrap diagnostics in sample logs instead of tool output.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.0  (2026-11-02)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Moved runtime assertions and fixture projects into per-case files.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added binary fixture baselines, executable permission tracking and confined
+file parameters for independent check extensions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Prepared workspaces and replay inputs from immutable snapshots while retaining
+support for historical inline case inputs.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.0  (2026-11-01)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added evaluation suites for the remaining eleven project skills and
+suite selection, independent behavioral checks, and reproducible tool environments.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Archived tool calls, binary artifacts, symbolic links, and environment identity.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added suite-aware history comparisons and multi-suite batch indexes.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Preserved provider artifacts across evaluator timeouts and exposed prepared
+&lt;code&gt;MCP&lt;/code&gt; runners with native tool-result evidence.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.2.0  (2026-11-01)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Renamed the main system package namespace to &lt;code&gt;40ants-ai-evals/*&lt;/code&gt; and the
+test system and package namespace to &lt;code&gt;40ants-ai-evals-tests/*&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Declared explicit dependencies for evaluation check systems.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.1.0  (2026-11-01)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added the initial Common Lisp skill evaluation harness with Codex
+and OpenCode providers and independent checks.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
+    </channel>
+</rss>

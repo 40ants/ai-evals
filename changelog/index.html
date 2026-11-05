@@ -1,0 +1,316 @@
+<html lang=en>
+ <head>
+  <meta charset=UTF-8><meta name=viewport
+      content="width=device-width, initial-scale=1">
+  <title>ChangeLog</title>
+  <link rel=alternate
+        href="https://github.com/40ants/ai-evals/changelog.xml"
+        type="application/rss+xml">
+  <link rel=stylesheet type="text/css"
+        href="../theme.css">
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript" src="../toc.js"></script>
+  <script type="text/javascript">$(document).ready(function() {$('a:has(img)').css('border-bottom', 'none')})</script>
+  <link rel=stylesheet type="text/css"
+      href="../highlight.min.css">
+  <script type="text/javascript"
+          src="../highlight.min.js"></script>
+  <script type="text/javascript">hljs.highlightAll();</script>
+<style type="text/css">
+/* Стили для сворачиваемого меню */
+.sidebar ul ul {
+  display: none; /* Скрываем все подменю по умолчанию */
+  margin-left: 0.5em;
+}
+
+.sidebar li.expanded > ul {
+  display: block; /* Показываем подменю для развернутых элементов */
+}
+
+/* Стили для пунктов с подменю */
+.sidebar li.has-children > a {
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.sidebar li.has-children > p > a {
+  position: relative;
+  left: -1rem;
+}
+
+.sidebar li.has-children > p > a::before {
+  content:"►";
+}
+
+.sidebar li.has-children.expanded > p > a::before {
+  content: "▼";
+  position: relative;
+  left: -0.08rem;
+}
+
+/* Подсветка активного пункта */
+.sidebar li.active > a {
+  font-weight: bold;
+}
+
+/* Если активная страница находится в подменю, раскрываем родителя */
+.sidebar li.active-parent {
+  font-weight: normal;
+}
+
+.sidebar li.active-parent > ul {
+  display: block;
+}
+</style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL71WXK73K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FL71WXK73K');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(42462884, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/42462884" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+ </head>
+ <body>
+  <div class=page><a id=fork-me href="https://github.com/40ants/ai-evals">Fork me on GitHub</a>
+   <div class=navbar>
+    <div class=navbar-inner>
+     <a class=brand href="/">
+      <img class=logo
+           src="https://40ants.com/img/logo.svg"></a>
+     <ul class=nav>
+      <li><a href="/posts/">Blog</a>
+      <li><a href="/ru/posts/">Blog (RU)</a>
+      <li><a href="/tips/">Lisp Tips</a>
+      <li><a href="/projects/">Our Projects</a>
+      <li><a href="/about/">About</a>
+     </ul>
+    </div>
+   </div>
+   <input type=checkbox id=sidebar-check>
+   <label for=sidebar-check>
+    <div id=sidebar-trigger>
+     <span></span><span></span><span></span>
+    </div></label><div class=sidebar><div class=header><form class=search method=GET
+      action="../search/">
+      <input type=text name=q>
+      <input type=submit value=Search><span id=search-progress></span>
+     </form>
+    </div><div class=content><div class=page-toc><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-40INDEX-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-40INDEX-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ants-ai-evals — Reusable skill evaluations</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40OVERVIEW-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40OVERVIEW-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">What AI Evals adds to Promptfoo</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40QUICKSTART-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40QUICKSTART-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Quickstart: install and run your first skill eval</a></p><ul><li><p><a href="../#1-prepare-a-new-project-and-choose-your-tools" data-document="../" data-node="1-prepare-a-new-project-and-choose-your-tools">1. Prepare a new project and choose your tools</a></p><ul><li><p><a href="../#option-a-use-nix-shell" data-document="../" data-node="option-a-use-nix-shell">Option A: Use nix-shell</a></p></li><li><p><a href="../#option-b-install-the-dependencies-yourself" data-document="../" data-node="option-b-install-the-dependencies-yourself">Option B: Install the dependencies yourself</a></p></li></ul></li><li><p><a href="../#2-create-the-skill-and-fixtures" data-document="../" data-node="2-create-the-skill-and-fixtures">2. Create the skill and fixtures</a></p></li><li><p><a href="../#3-register-the-suite-and-its-checks" data-document="../" data-node="3-register-the-suite-and-its-checks">3. Register the suite and its checks</a></p></li><li><p><a href="../#4-define-the-first-test-case" data-document="../" data-node="4-define-the-first-test-case">4. Define the first test case</a></p></li><li><p><a href="../#5-sign-in-and-run-one-sample" data-document="../" data-node="5-sign-in-and-run-one-sample">5. Sign in and run one sample</a></p></li><li><p><a href="../#6-inspect-failures-and-compare-changes" data-document="../" data-node="6-inspect-failures-and-compare-changes">6. Inspect failures and compare changes</a></p></li></ul></li><li><p><a href="../#40-ants-ai-evals-asdf-system-details" data-document="../" data-node="40-ants-ai-evals-asdf-system-details">40ANTS-AI-EVALS ASDF System Details</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40CONFIGURATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40CONFIGURATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Connect a consuming project</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40EXECUTION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40EXECUTION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Run, inspect and replay</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40EXTENSIONS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40EXTENSIONS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Project-owned checks and fixture environments</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40CONTINUOUS-INTEGRATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40CONTINUOUS-INTEGRATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Continuous integration</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">API</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FAGENTS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FAGENTS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/AGENTS</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FAGENTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FAGENTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FAGENTS-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FAGENTS-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Variables</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/CASE-RESOURCES</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCASE-RESOURCES-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Variables</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCHECKS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCHECKS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/CHECKS</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCHECKS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCHECKS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCLI-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCLI-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/CLI</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCLI-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCLI-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCOLLECTOR-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FCOLLECTOR-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/COLLECTOR</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCOLLECTOR-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FCOLLECTOR-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FENVIRONMENTS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FENVIRONMENTS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/ENVIRONMENTS</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FENVIRONMENTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FENVIRONMENTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/GRADING/CONTRACTS</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FGRADING-2FCONTRACTS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FHISTORY-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FHISTORY-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/HISTORY</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FHISTORY-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FHISTORY-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FPROJECT-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FPROJECT-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/PROJECT</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROJECT-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROJECT-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/PROVIDERS/OPENCODE</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FPROVIDERS-2FOPENCODE-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Variables</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FRECOVERY-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FRECOVERY-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/RECOVERY</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FRECOVERY-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FRECOVERY-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FRUNNER-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FRUNNER-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/RUNNER</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FRUNNER-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FRUNNER-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FSUITES-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FSUITES-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/SUITES</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FSUITES-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FSUITES-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li></ul></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FUTIL-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-4040ANTS-AI-EVALS-2FUTIL-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">40ANTS-AI-EVALS/UTIL</a></p><ul><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FUTIL-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FUTIL-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li><li><p><a href="../#x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FUTIL-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="../" data-node="x-2840ANTS-AI-EVALS-DOCS-2FINDEX-3A-3A-7C-4040ANTS-AI-EVALS-2FUTIL-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Variables</a></p></li></ul></li></ul></li></ul></li><li><p><a href="#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-40CHANGELOG-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-40CHANGELOG-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">ChangeLog</a></p></li></ul>
+     </div>
+    </div><div class=footer>
+     <a href="https://40ants.com/doc">[generated by 40ANTS-DOC]</a>
+    </div>
+   </div><div class=content role=main><h1>ChangeLog<a class=rss-icon href="https://github.com/40ants/ai-evals/changelog.xml"></a></h1><h2>0.5.1 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E5-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E5-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Bootstrapped the system class dependency before Roswell probes the main system,
+so installation into an empty project-local Quicklisp reaches script installation.</p></li><li><p>Documented invocation of the locally installed command.</p></li></ul><h2>0.5.0 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E5-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E5-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Extracted the evaluation library into its own repository.</p></li><li><p>Separated framework, consuming project, runtime dependencies and archived inputs.</p></li><li><p>Loaded project-defined fixture environments and assertions through <code>ASDF</code> extensions.</p></li><li><p>Preserved old combined snapshots and introduced independent engine/project snapshots.</p></li></ul><h2>0.4.10 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E10-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E10-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Aligned the browser bootstrap helper with the pinned Python 3.13 runtime,
+so browser diagnostics reach Playwright instead of failing on unsupported packages.</p></li><li><p>Preserved existing Nix and runner files and inherited an explicitly supplied browser.</p></li><li><p>Kept complete strict-build output and exposed root changelog sections.</p></li><li><p>Used available image inspection tools without substituting custom pixel heuristics.</p></li></ul><h2>0.4.9 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E9-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E9-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Prepared real unavailable-tool and unavailable-browser scenarios through
+literal per-workspace environment overrides, including nested Qlot commands.</p></li><li><p>Created reproducible tracked-source baselines for lint fixtures while respecting
+ignored vendor files, and preserved environment metadata during grading.</p></li><li><p>Clarified automatic selection of Rove testing and live Lisp evaluation skills.</p></li></ul><h2>0.4.8 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E8-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E8-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Preserved source pathnames beneath isolated compilation caches so Rove
+discovers package-inferred test suites instead of reporting zero tests.</p></li><li><p>Kept dependency outputs shared while confining candidate outputs to each workspace.</p></li><li><p>Made Rove guidance record condition predicates as assertions and propagate
+failed suites through the <code>ASDF</code> test operation and process exit status.</p></li></ul><h2>0.4.7 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E7-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E7-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Recorded exact batch run ownership instead of discovering new directories,
+so concurrent diagnostic evaluations cannot enter another suite's batch index.</p></li><li><p>Retained the run identifier when suite preparation fails before model execution.</p></li></ul><h2>0.4.6 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E6-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E6-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Prepared local Git baseline revisions for documentation fixtures so
+strict source-link generation starts from a valid checkout.</p></li><li><p>Used the installed documentation builder through Qlot without requiring an executable
+wrapper or dependency installation.</p></li><li><p>Kept pinned dependency bootstrap diagnostics in the startup log while
+preserving candidate warnings and strict documentation failures in tool output.</p></li><li><p>Corrected <code>JSON</code> parsing examples to the installed Yason keyword and boolean
+representations, preserving semantic round-trips without custom Unicode rewriting.</p></li></ul><h2>0.4.5 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E5-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E5-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Rejected accidental external OpenCode tool directories while retaining
+read access to pinned dependencies, binaries and captured tool output.</p></li><li><p>Recommended relative paths inside isolated evaluation workspaces.</p></li></ul><h2>0.4.4 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E4-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E4-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Checked rejected-input error reports through runtime observations,
+including custom conditions, instead of requiring one error-call syntax.</p></li><li><p>Verified positive real inputs and several distinct rejected values.</p></li></ul><h2>0.4.3 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E3-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E3-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Increased the default OpenCode execution deadline to 630 seconds.</p></li><li><p>Kept file resource inventories atomic in Promptfoo to prevent duplicate samples.</p></li><li><p>Observed recovered Lisp runtime deadlines without depending on candidate handlers.</p></li><li><p>Clarified project-only cache cleanup and preserved spaces in helper paths.</p></li></ul><h2>0.4.2 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E2-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E2-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Added fractional check scores while preserving mandatory pass decisions.</p></li><li><p>Awarded half credit for inline Serapeum return types and full credit for
+return types on a separate line. Missing signatures remain failures.</p></li></ul><h2>0.4.1 (2026-11-04)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Isolated sample <code>ASDF</code> system discovery from unrelated fixture projects.</p></li><li><p>Added prepared runtime instructions and Qlot execution preflight to all suites.</p></li><li><p>Supplied real <code>ASDF</code> project fixtures for the original Lisp writing tasks.</p></li><li><p>Routed the prepared agent shell through Qlot for complete compound commands.</p></li><li><p>Retained <code>UIOP</code> bootstrap diagnostics in sample logs instead of tool output.</p></li></ul><h2>0.4.0 (2026-11-02)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Moved runtime assertions and fixture projects into per-case files.</p></li><li><p>Added binary fixture baselines, executable permission tracking and confined
+file parameters for independent check extensions.</p></li><li><p>Prepared workspaces and replay inputs from immutable snapshots while retaining
+support for historical inline case inputs.</p></li></ul><h2>0.3.0 (2026-11-01)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Added evaluation suites for the remaining eleven project skills and
+suite selection, independent behavioral checks, and reproducible tool environments.</p></li><li><p>Archived tool calls, binary artifacts, symbolic links, and environment identity.</p></li><li><p>Added suite-aware history comparisons and multi-suite batch indexes.</p></li><li><p>Preserved provider artifacts across evaluator timeouts and exposed prepared
+<code>MCP</code> runners with native tool-result evidence.</p></li></ul><h2>0.2.0 (2026-11-01)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E2-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E2-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Renamed the main system package namespace to <code>40ants-ai-evals/*</code> and the
+test system and package namespace to <code>40ants-ai-evals-tests/*</code>.</p></li><li><p>Declared explicit dependencies for evaluation check systems.</p></li></ul><h2>0.1.0 (2026-11-01)<a class=header-link
+     href=#x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E1-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-2840ANTS-AI-EVALS-DOCS-2FCHANGELOG-3A-3A-7C0-2E1-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><ul><li><p>Added the initial Common Lisp skill evaluation harness with Codex
+and OpenCode providers and independent checks.</p></li></ul>
+   </div><div class=footer>
+    <hr class=separator>
+    <p class=fineprint>Created with passion by <em>40Ants</em><a class=lisp-logo
+     href="http://lisp-lang.org/">
+      <img
+           src="https://40ants.com/img/made-with-lisp.svg"></a>
+   </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Ключ для localStorage
+  const STORAGE_KEY = '40ants-ai-evals-docs-menu-state';
+  
+  // Загружаем сохраненное состояние меню
+  function loadMenuState() {
+    try {
+      const savedState = localStorage.getItem(STORAGE_KEY);
+      return savedState ? JSON.parse(savedState) : {};
+    } catch (e) {
+      console.error('Ошибка при загрузке состояния меню:', e);
+      return {};
+    }
+  }
+  
+  // Сохраняем текущее состояние меню
+  function saveMenuState(state) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.error('Ошибка при сохранении состояния меню:', e);
+    }
+  }
+  
+  // Получаем уникальный идентификатор для пункта меню
+  function getMenuItemId(item) {
+    const link = item.querySelector('a');
+    if (!link) return null;
+    
+    // Используем текст ссылки как идентификатор
+    // Можно также использовать href, но он может меняться в зависимости от текущей страницы
+    return link.innerText.trim();
+  }
+  
+  // Загружаем сохраненное состояние
+  const menuState = loadMenuState();
+  
+  // Находим все пункты меню с подпунктами
+  const menuItems = document.querySelectorAll('.sidebar li');
+  
+  // Обрабатываем каждый пункт меню
+  menuItems.forEach(item => {
+    const subMenu = item.querySelector('ul');
+    
+    // Если у пункта есть подменю
+    if (subMenu) {
+      const itemId = getMenuItemId(item);
+      item.classList.add('has-children');
+      
+      // Восстанавливаем состояние из localStorage, если оно сохранено
+      if (itemId && menuState[itemId]) {
+        item.classList.add('expanded');
+      }
+      
+      // Добавляем обработчик клика
+      const link = item.querySelector('a');
+      if (link) {
+        link.addEventListener('click', function(e) {
+          // Останавливаем переход по ссылке только если кликнули по пункту с подменю
+          if (item.classList.contains('has-children')) {
+            e.preventDefault();
+            
+            // Переключаем класс для раскрытия/скрытия
+            item.classList.toggle('expanded');
+            
+            // Сохраняем новое состояние
+            if (itemId) {
+              if (item.classList.contains('expanded')) {
+                menuState[itemId] = true;
+              } else {
+                delete menuState[itemId];
+              }
+              saveMenuState(menuState);
+            }
+          }
+        });
+      }
+    }
+  });
+  
+  // Функция для поиска и раскрытия родителей активного пункта
+  function expandActiveItemParents() {
+    const activeItem = document.querySelector('.sidebar li.active');
+    if (activeItem) {
+      let parent = activeItem.parentElement;
+      
+      while (parent) {
+        if (parent.tagName === 'UL' && parent.parentElement && parent.parentElement.tagName === 'LI') {
+          parent.parentElement.classList.add('expanded');
+          parent.parentElement.classList.add('active-parent');
+          
+          // Сохраняем состояние активного родителя
+          const parentItem = parent.parentElement;
+          const parentId = getMenuItemId(parentItem);
+          if (parentId) {
+            menuState[parentId] = true;
+          }
+        }
+        parent = parent.parentElement;
+      }
+      
+      // Сохраняем обновленное состояние после раскрытия активных родителей
+      saveMenuState(menuState);
+    }
+  }
+  
+  // Запускаем функцию для текущей страницы
+  expandActiveItemParents();
+});
+</script>
+
+
+  </div>
+ </body>
+</html>
